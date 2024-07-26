@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import plotly.graph_objects as go
 from .fetch_data import fetch_data
+from .chart_style import apply_common_layout
 
 def process_market_data():
     endpoint = "/public/coins/wif/v1"
@@ -43,8 +44,16 @@ def generate_market_data_charts(df):
 
     # Percentage Changes Chart
     fig = go.Figure(data=[
-        go.Bar(name='24h % Change', x=df['name'], y=df['percent_change_24h']),
-        go.Bar(name='7d % Change', x=df['name'], y=df['percent_change_7d'])
+        go.Bar(name='24h % Change', x=[df['name'][0]], y=[df['percent_change_24h'][0]]),
+        go.Bar(name='7d % Change', x=[df['name'][0]], y=[df['percent_change_7d'][0]])
     ])
-    fig.update_layout(title='Percentage Changes', barmode='group', xaxis_title='Name', yaxis_title='Percent Change')
+    fig.update_layout(
+        title='Percentage Changes',
+        barmode='group',
+        xaxis_title='Name',
+        yaxis_title='Percent Change',
+        legend_title='Change Interval'
+    )
+    fig = apply_common_layout(fig)
     fig.write_html(os.path.join('charts', 'percentage_changes.html'))
+
