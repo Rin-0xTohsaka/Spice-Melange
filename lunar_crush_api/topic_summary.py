@@ -1,9 +1,7 @@
 import os
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
+from jinja2 import Template
 from .fetch_data import fetch_data
-from .chart_style import apply_common_layout
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
@@ -52,61 +50,8 @@ def generate_topic_summary_charts(df):
     # Adjust column names for better readability
     df.columns = df.columns.str.replace('_', ' ').str.title()
 
-    # Create Plotly Table
-    fig = go.Figure(data=[go.Table(
-        header=dict(
-            values=list(df.columns),
-            fill_color='paleturquoise',
-            align='left',
-            font=dict(size=12, color='black')
-        ),
-        cells=dict(
-            values=[df[col] for col in df.columns],
-            fill_color='lavender',
-            align='left',
-            font=dict(size=11, color='black')
-        )
-    )])
-    fig.update_layout(title='Topic Summary Table')
-    fig.write_html(os.path.join('charts', 'topic_summary_table.html'))
-
-    # Interactions by Type
-    types_interactions = df[[col for col in df.columns if col.startswith("Types Interactions ")]]
-    types_interactions = types_interactions.melt(var_name='Type', value_name='Interactions')
-    types_interactions['Type'] = types_interactions['Type'].str.replace('Types Interactions ', '')
-    fig = px.bar(
-        types_interactions, 
-        x='Type', 
-        y='Interactions', 
-        title='Interactions by Type'
-    )
-    fig = apply_common_layout(fig)
-    fig.write_html(os.path.join('charts', 'interactions_by_type.html'))
-
-    # Sentiment Analysis
-    sentiment_description = "Sentiment score is between 1 and 100, where higher scores indicate more positive sentiment."
-    types_sentiment = df[[col for col in df.columns if col.startswith("Types Sentiment ")]]
-    types_sentiment = types_sentiment.melt(var_name='Type', value_name='Sentiment Score')
-    types_sentiment['Type'] = types_sentiment['Type'].str.replace('Types Sentiment ', '')
-    fig = px.bar(
-        types_sentiment, 
-        x='Type', 
-        y='Sentiment Score', 
-        title='Sentiment Analysis by Type'
-    )
-    fig.add_annotation(
-        text=sentiment_description,
-        align='left',
-        showarrow=False,
-        xref='paper',
-        yref='paper',
-        x=1,
-        y=1,
-        bordercolor='black',
-        borderwidth=1
-    )
-    fig = apply_common_layout(fig)
-    fig.write_html(os.path.join('charts', 'sentiment_analysis.html'))
+    # Debugging: Print column names to verify
+    print(df.columns.tolist())
 
     # Related Topics Word Cloud
     related_topics = df['Related Topics'].values[0]
@@ -119,3 +64,113 @@ def generate_topic_summary_charts(df):
     plt.tight_layout(pad=0)
     plt.savefig(os.path.join('charts', 'related_topics_wordcloud.png'))
     plt.close()
+
+    # HTML Template for Chart.js
+    html_template = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Topic Summary</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <h1>Topic Summary Table</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                    <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    {% for cell in row %}
+                    <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1>Interactions by Type</h1>
+        <canvas id="interactionsByTypeChart"></canvas>
+        <script>
+            var ctx = document.getElementById('interactionsByTypeChart').getContext('2d');
+            var interactionsByTypeChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: {{ interaction_types | safe }},
+                    datasets: [{
+                        label: 'Interactions',
+                        data: {{ interactions | safe }},
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: { title: { display: true, text: 'Type' }},
+                        y: { title: { display: true, text: 'Interactions' }}
+                    }
+                }
+            });
+        </script>
+
+        <h1>Sentiment Analysis by Type</h1>
+        <canvas id="sentimentAnalysisChart"></canvas>
+        <script>
+            var ctx2 = document.getElementById('sentimentAnalysisChart').getContext('2d');
+            var sentimentAnalysisChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: {{ sentiment_types | safe }},
+                    datasets: [{
+                        label: 'Sentiment Score',
+                        data: {{ sentiment_scores | safe }},
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: { title: { display: true, text: 'Type' }},
+                        y: { title: { display: true, text: 'Sentiment Score' }}
+                    }
+                }
+            });
+        </script>
+
+        <h1>Related Topics Word Cloud</h1>
+        <img src="related_topics_wordcloud.png" alt="Related Topics Word Cloud">
+
+    </body>
+    </html>
+    """
+
+    # Prepare data for templates
+    data = {
+        "columns": df.columns.tolist(),
+        "data": df.values.tolist(),
+        "interaction_types": [col.replace('Types Interactions ', '') for col in df.columns if col.startswith("Types Interactions ")],
+        "interactions": [df[col].iloc[0] for col in df.columns if col.startswith("Types Interactions ")],
+        "sentiment_types": [col.replace('Types Sentiment ', '') for col in df.columns if col.startswith("Types Sentiment ")],
+        "sentiment_scores": [df[col].iloc[0] for col in df.columns if col.startswith("Types Sentiment ")]
+    }
+
+    # Render HTML with data
+    template = Template(html_template)
+    html_content = template.render(**data)
+
+    # Save HTML to file
+    with open(os.path.join('charts', 'topic_summary.html'), 'w') as f:
+        f.write(html_content)
+
+if __name__ == "__main__":
+    df_topic_summary = process_topic_summary()
+    generate_topic_summary_charts(df_topic_summary)

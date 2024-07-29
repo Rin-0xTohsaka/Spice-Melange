@@ -1,19 +1,4 @@
-import os
-import pandas as pd
-from jinja2 import Template
-from .fetch_data import fetch_data
 
-def process_market_data():
-    endpoint = "/public/coins/wif/v1"
-    data = fetch_data(endpoint)
-    df = pd.DataFrame([data['data']])
-    return df
-
-def generate_market_data_charts(df):
-    os.makedirs('charts', exist_ok=True)
-
-    # HTML Template for Chart.js and DataTables with additional descriptions
-    html_template = """
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -66,7 +51,7 @@ def generate_market_data_charts(df):
                     labels: ['Market Cap'],
                     datasets: [{
                         label: 'Market Cap (USD)',
-                        data: [{{ market_cap }}],
+                        data: [2408678357.9],
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
@@ -105,8 +90,8 @@ def generate_market_data_charts(df):
             </thead>
             <tbody>
                 <tr>
-                    <td>${{ price }}</td>
-                    <td>${{ volume_24h }}</td>
+                    <td>$2.4114619492480722</td>
+                    <td>$316704390.62</td>
                 </tr>
             </tbody>
         </table>
@@ -132,7 +117,7 @@ def generate_market_data_charts(df):
                     labels: ['24h % Change', '7d % Change'],
                     datasets: [{
                         label: 'Percentage Change',
-                        data: [{{ percent_change_24h }}, {{ percent_change_7d }}],
+                        data: [-0.527776123188, -14.986297444577],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)'
@@ -168,22 +153,4 @@ def generate_market_data_charts(df):
         </script>
     </body>
     </html>
-    """
-
-    # Render HTML with data
-    template = Template(html_template)
-    html_content = template.render(
-        market_cap=df['market_cap'][0],
-        price=df['price'][0],
-        volume_24h=df['volume_24h'][0],
-        percent_change_24h=df['percent_change_24h'][0],
-        percent_change_7d=df['percent_change_7d'][0]
-    )
-
-    # Save HTML to file
-    with open(os.path.join('charts', 'market_data.html'), 'w') as f:
-        f.write(html_content)
-
-if __name__ == "__main__":
-    df_market_data = process_market_data()
-    generate_market_data_charts(df_market_data)
+    

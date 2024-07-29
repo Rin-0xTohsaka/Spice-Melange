@@ -1,9 +1,7 @@
 import os
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
+from jinja2 import Template
 from .fetch_data import fetch_data
-from .chart_style import apply_common_layout
 
 def process_top_creators():
     endpoint = "/public/topic/dogwifhat/creators/v1"
@@ -14,74 +12,129 @@ def process_top_creators():
 def generate_top_creators_charts(df):
     os.makedirs('charts', exist_ok=True)
 
-    # Create Plotly Table
-    fig = go.Figure(data=[go.Table(
-        header=dict(
-            values=list(df.columns),
-            fill_color='paleturquoise',
-            align='left',
-            font=dict(size=12, color='black')
-        ),
-        cells=dict(
-            values=[df[col] for col in df.columns],
-            fill_color='lavender',
-            align='left',
-            font=dict(size=11, color='black')
-        )
-    )])
-    fig.update_layout(title='Top Creators Table')
-    fig.write_html(os.path.join('charts', 'top_creators_table.html'))
+    # HTML Template for Chart.js
+    html_template = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Top Creators</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <h1>Top Creators Table</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                    <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    {% for cell in row %}
+                    <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-    # Description for Interactions
-    interactions_description = "Interactions represent the total number of publicly measurable engagements on a social post, including views, likes, comments, thumbs up, upvotes, shares, etc."
+        <h1>Interactions in Last 24 Hours by Creator</h1>
+        <canvas id="interactions24hChart"></canvas>
+        <script>
+            var ctx = document.getElementById('interactions24hChart').getContext('2d');
+            var interactions24hChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: {{ creator_names | safe }},
+                    datasets: [{
+                        label: 'Interactions (24h)',
+                        data: {{ interactions_24h | safe }},
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: { title: { display: true, text: 'Creator Name' }},
+                        y: { title: { display: true, text: 'Interactions (24h)' }}
+                    }
+                }
+            });
+        </script>
 
-    # Bar Chart of Interactions
-    fig = px.bar(
-        df, 
-        x='creator_name', 
-        y='interactions_24h', 
-        title='Interactions in Last 24 Hours by Creator',
-        labels={
-            'creator_name': 'Creator Name',
-            'interactions_24h': 'Interactions (24h)'
-        }
-    )
-    fig.add_annotation(
-        text=interactions_description,
-        align='left',
-        showarrow=False,
-        xref='paper',
-        yref='paper',
-        x=1,
-        y=1,
-        bordercolor='black',
-        borderwidth=1
-    )
-    fig = apply_common_layout(fig)
-    fig.write_html(os.path.join('charts', 'interactions_24h.html'))
+        <h1>Follower Count Distribution</h1>
+        <canvas id="followerCountChart"></canvas>
+        <script>
+            var ctx2 = document.getElementById('followerCountChart').getContext('2d');
+            var followerCountChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: {{ creator_names | safe }},
+                    datasets: [{
+                        label: 'Number of Followers',
+                        data: {{ creator_followers | safe }},
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: { title: { display: true, text: 'Creator Name' }},
+                        y: { title: { display: true, text: 'Number of Followers' }}
+                    }
+                }
+            });
+        </script>
 
-    # Follower Count Distribution
-    fig = px.histogram(
-        df, 
-        x='creator_followers', 
-        title='Follower Count Distribution',
-        labels={
-            'creator_followers': 'Number of Followers'
-        }
-    )
-    fig = apply_common_layout(fig)
-    fig.write_html(os.path.join('charts', 'follower_count_distribution.html'))
+        <h1>Number of Posts in Last 24 Hours by Creator</h1>
+        <canvas id="postActivityChart"></canvas>
+        <script>
+            var ctx3 = document.getElementById('postActivityChart').getContext('2d');
+            var postActivityChart = new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: {{ creator_names | safe }},
+                    datasets: [{
+                        label: 'Posts (24h)',
+                        data: {{ creator_posts | safe }},
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: { title: { display: true, text: 'Creator Name' }},
+                        y: { title: { display: true, text: 'Posts (24h)' }}
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    """
 
-    # Post Activity
-    fig = px.bar(
-        df, 
-        x='creator_name', 
-        y='creator_posts', 
-        title='Number of Posts in Last 24 Hours by Creator',
-        labels={
-            'creator_name': 'Creator Name',
-            'creator_posts': 'Posts (24h)'
-        }
-    )
-    fig = apply_common_layout(fig)
-    fig.write_html(os.path.join('charts', 'post_activity.html'))
+    # Prepare data for templates
+    data = {
+        "columns": df.columns.tolist(),
+        "data": df.values.tolist(),
+        "creator_names": df['creator_name'].tolist(),
+        "interactions_24h": df['interactions_24h'].tolist(),
+        "creator_followers": df['creator_followers'].tolist(),
+        "creator_posts": df['creator_posts'].tolist()
+    }
+
+    # Render HTML with data
+    template = Template(html_template)
+    html_content = template.render(**data)
+
+    # Save HTML to file
+    with open(os.path.join('charts', 'top_creators.html'), 'w') as f:
+        f.write(html_content)

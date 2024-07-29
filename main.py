@@ -6,12 +6,36 @@ from lunar_crush_api.top_creators import process_top_creators, generate_top_crea
 from lunar_crush_api.top_posts import process_top_posts, generate_top_posts_charts
 from lunar_crush_api.topic_summary import process_topic_summary, generate_topic_summary_charts
 from lunar_crush_api.topic_time_series import process_topic_time_series, generate_topic_time_series_charts
-# Import other necessary modules similarly...
 
 def save_to_csv(df, filename):
     os.makedirs('data', exist_ok=True)
     filepath = os.path.join('data', filename)
     df.to_csv(filepath, index=False)
+
+def generate_index_html():
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Charts Index</title>
+    </head>
+    <body>
+        <h1>Charts Index</h1>
+        <ul>
+            <li><a href="market_data.html">Market Data</a></li>
+            <li><a href="market_time_series.html">Market Time Series</a></li>
+            <li><a href="top_creators.html">Top Creators</a></li>
+            <li><a href="top_posts.html">Top Posts</a></li>
+            <li><a href="topic_summary.html">Topic Summary</a></li>
+            <li><a href="topic_time_series.html">Topic Time Series</a></li>
+        </ul>
+    </body>
+    </html>
+    """
+    with open(os.path.join('charts', 'index.html'), 'w') as f:
+        f.write(html_content)
 
 def main():
     dataframes = {}
@@ -52,7 +76,8 @@ def main():
     generate_topic_time_series_charts(df_topic_time_series)
     dataframes["topic_time_series"] = df_topic_time_series
 
-    # Similarly process and generate charts for other datasets...
+    # Generate index.html
+    generate_index_html()
 
 if __name__ == "__main__":
     main()
