@@ -1,3 +1,5 @@
+# main.py
+
 import os
 import pandas as pd
 from lunar_crush_api.market_data import process_market_data, generate_market_data_charts
@@ -6,6 +8,8 @@ from lunar_crush_api.top_creators import process_top_creators, generate_top_crea
 from lunar_crush_api.top_posts import process_top_posts, generate_top_posts_charts
 from lunar_crush_api.topic_summary import process_topic_summary, generate_topic_summary_charts
 from lunar_crush_api.topic_time_series import process_topic_time_series, generate_topic_time_series_charts
+from lunar_crush_api.coin_comparison import generate_comparison_charts
+from gecko_terminal_api.pools_data import process_pools_data, generate_pools_data_charts
 
 def save_to_csv(df, filename):
     os.makedirs('data', exist_ok=True)
@@ -30,6 +34,8 @@ def generate_index_html():
             <li><a href="top_posts.html">Top Posts</a></li>
             <li><a href="topic_summary.html">Topic Summary</a></li>
             <li><a href="topic_time_series.html">Topic Time Series</a></li>
+            <li><a href="pools_data.html">Pools Data</a></li>
+            <li><a href="coin_comparison.html">Coin Comparison</a></li>
         </ul>
     </body>
     </html>
@@ -75,6 +81,16 @@ def main():
     save_to_csv(df_topic_time_series, "topic_time_series.csv")
     generate_topic_time_series_charts(df_topic_time_series)
     dataframes["topic_time_series"] = df_topic_time_series
+
+    # Process and generate charts for pools data
+    df_pools_data = process_pools_data()
+    save_to_csv(df_pools_data, "pools_data.csv")
+    generate_pools_data_charts(df_pools_data)
+    dataframes["pools_data"] = df_pools_data
+
+    # Generate comparison charts for specified coins
+    coins = ["wif", "popcat", "doge", "shib", "pepe", "bonk"]
+    generate_comparison_charts(coins)
 
     # Generate index.html
     generate_index_html()

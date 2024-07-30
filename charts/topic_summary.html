@@ -5,11 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Topic Summary</title>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
     </head>
     <body>
-        <h1>Topic Summary Table</h1>
-        <table border="1">
+        <h1>Meta Summary Table</h1>
+        <table id="summaryTable" class="display">
             <thead>
                 <tr>
                     
@@ -21,65 +23,49 @@
                     
                     <th>Related Topics</th>
                     
-                    <th>Interactions 1H</th>
+                    <th>Interactions (1H)</th>
                     
-                    <th>Interactions 24H</th>
+                    <th>Interactions (24H)</th>
                     
-                    <th>Num Contributors</th>
+                    <th>Number Of Contributors</th>
                     
-                    <th>Num Posts</th>
+                    <th>Number Of Posts</th>
                     
                     <th>Categories</th>
                     
                     <th>Trend</th>
                     
-                    <th>Types Count Tweet</th>
+                    <th>Tweet</th>
                     
-                    <th>Types Count Youtube-Video</th>
+                    <th>Tiktok-Video</th>
                     
-                    <th>Types Count Tiktok-Video</th>
+                    <th>Youtube-Video</th>
                     
-                    <th>Types Count Reddit-Post</th>
+                    <th>Reddit-Post</th>
                     
-                    <th>Types Interactions Tweet</th>
+                    <th>Tweet Positive</th>
                     
-                    <th>Types Interactions Youtube-Video</th>
+                    <th>Tweet Neutral</th>
                     
-                    <th>Types Interactions Tiktok-Video</th>
+                    <th>Tweet Negative</th>
                     
-                    <th>Types Interactions Reddit-Post</th>
+                    <th>Tiktok-Video Positive</th>
                     
-                    <th>Types Sentiment Tweet</th>
+                    <th>Tiktok-Video Neutral</th>
                     
-                    <th>Types Sentiment Youtube-Video</th>
+                    <th>Tiktok-Video Negative</th>
                     
-                    <th>Types Sentiment Tiktok-Video</th>
+                    <th>Youtube-Video Positive</th>
                     
-                    <th>Types Sentiment Reddit-Post</th>
+                    <th>Youtube-Video Neutral</th>
                     
-                    <th>Types Sentiment Detail Tweet Positive</th>
+                    <th>Youtube-Video Negative</th>
                     
-                    <th>Types Sentiment Detail Tweet Neutral</th>
+                    <th>Reddit-Post Positive</th>
                     
-                    <th>Types Sentiment Detail Tweet Negative</th>
+                    <th>Reddit-Post Neutral</th>
                     
-                    <th>Types Sentiment Detail Youtube-Video Positive</th>
-                    
-                    <th>Types Sentiment Detail Youtube-Video Neutral</th>
-                    
-                    <th>Types Sentiment Detail Youtube-Video Negative</th>
-                    
-                    <th>Types Sentiment Detail Tiktok-Video Positive</th>
-                    
-                    <th>Types Sentiment Detail Tiktok-Video Neutral</th>
-                    
-                    <th>Types Sentiment Detail Tiktok-Video Negative</th>
-                    
-                    <th>Types Sentiment Detail Reddit-Post Positive</th>
-                    
-                    <th>Types Sentiment Detail Reddit-Post Neutral</th>
-                    
-                    <th>Types Sentiment Detail Reddit-Post Negative</th>
+                    <th>Reddit-Post Negative</th>
                     
                 </tr>
             </thead>
@@ -91,128 +77,66 @@
                     
                     <td>Dogwifhat</td>
                     
-                    <td>3119</td>
+                    <td>3181</td>
                     
-                    <td>$bonk, $bunny, $psps, $shib, $brett, $samo, popcat, worldcoin, blockchain, bitcoin, ethereum, telegram, solama, memecoin, memecoins, irl, bitcoin conference, shiba inu, devs, mcap</td>
+                    <td>$bonk, $bunny, $doge, $ubt, worldcoin, blockchain, bitcoin, market cap, catwifbag, memecoin, memecoins, mcap, devs, alltime, irl, accumulation, eth, sol, cryptocurrency, coins</td>
                     
-                    <td>605</td>
+                    <td>383</td>
                     
-                    <td>31041</td>
+                    <td>34246</td>
                     
-                    <td>153</td>
+                    <td>248</td>
                     
-                    <td>1778</td>
+                    <td>1255</td>
                     
                     <td>Cryptocurrencies</td>
                     
                     <td>down</td>
                     
-                    <td>1496</td>
+                    <td>83</td>
                     
-                    <td>112</td>
+                    <td>74</td>
                     
-                    <td>59</td>
+                    <td>94</td>
                     
-                    <td>111</td>
+                    <td>45</td>
                     
-                    <td>24140</td>
+                    <td>11214</td>
                     
-                    <td>1033</td>
+                    <td>14813</td>
                     
-                    <td>5457</td>
+                    <td>1208</td>
                     
-                    <td>325</td>
+                    <td>1186</td>
                     
-                    <td>80</td>
+                    <td>4538</td>
                     
-                    <td>93</td>
+                    <td>173</td>
                     
-                    <td>78</td>
+                    <td>539</td>
                     
-                    <td>41</td>
+                    <td>149</td>
                     
-                    <td>12942</td>
+                    <td>1</td>
                     
-                    <td>9769</td>
+                    <td>55</td>
                     
-                    <td>1429</td>
+                    <td>48</td>
                     
-                    <td>497</td>
-                    
-                    <td>523</td>
-                    
-                    <td>13</td>
-                    
-                    <td>995</td>
-                    
-                    <td>4459</td>
-                    
-                    <td>3</td>
-                    
-                    <td>71</td>
-                    
-                    <td>49</td>
-                    
-                    <td>205</td>
+                    <td>214</td>
                     
                 </tr>
                 
             </tbody>
         </table>
-
-        <h1>Interactions by Type</h1>
-        <canvas id="interactionsByTypeChart"></canvas>
         <script>
-            var ctx = document.getElementById('interactionsByTypeChart').getContext('2d');
-            var interactionsByTypeChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Tweet', 'Youtube-Video', 'Tiktok-Video', 'Reddit-Post'],
-                    datasets: [{
-                        label: 'Interactions',
-                        data: [24140, 1033, 5457, 325],
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        x: { title: { display: true, text: 'Type' }},
-                        y: { title: { display: true, text: 'Interactions' }}
-                    }
-                }
+            $(document).ready(function() {
+                $('#summaryTable').DataTable();
             });
         </script>
 
-        <h1>Sentiment Analysis by Type</h1>
-        <canvas id="sentimentAnalysisChart"></canvas>
-        <script>
-            var ctx2 = document.getElementById('sentimentAnalysisChart').getContext('2d');
-            var sentimentAnalysisChart = new Chart(ctx2, {
-                type: 'bar',
-                data: {
-                    labels: ['Tweet', 'Youtube-Video', 'Tiktok-Video', 'Reddit-Post', 'Detail Tweet Positive', 'Detail Tweet Neutral', 'Detail Tweet Negative', 'Detail Youtube-Video Positive', 'Detail Youtube-Video Neutral', 'Detail Youtube-Video Negative', 'Detail Tiktok-Video Positive', 'Detail Tiktok-Video Neutral', 'Detail Tiktok-Video Negative', 'Detail Reddit-Post Positive', 'Detail Reddit-Post Neutral', 'Detail Reddit-Post Negative'],
-                    datasets: [{
-                        label: 'Sentiment Score',
-                        data: [80, 93, 78, 41, 12942, 9769, 1429, 497, 523, 13, 995, 4459, 3, 71, 49, 205],
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        x: { title: { display: true, text: 'Type' }},
-                        y: { title: { display: true, text: 'Sentiment Score' }}
-                    }
-                }
-            });
-        </script>
-
-        <h1>Related Topics Word Cloud</h1>
+        <h1>Word Cloud</h1>
         <img src="related_topics_wordcloud.png" alt="Related Topics Word Cloud">
-
     </body>
     </html>
     

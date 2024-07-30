@@ -11,35 +11,35 @@ def process_topic_summary():
     
     # Flatten nested structures
     flattened_data = {
-        "topic": data['data']['topic'],
-        "title": data['data']['title'],
-        "topic_rank": data['data']['topic_rank'],
-        "related_topics": ', '.join(data['data']['related_topics']),
-        "interactions_1h": data['data']['interactions_1h'],
-        "interactions_24h": data['data']['interactions_24h'],
-        "num_contributors": data['data']['num_contributors'],
-        "num_posts": data['data']['num_posts'],
-        "categories": ', '.join(data['data']['categories']),
-        "trend": data['data']['trend']
+        "Topic": data['data']['topic'],
+        "Title": data['data']['title'],
+        "Topic Rank": data['data']['topic_rank'],
+        "Related Topics": ', '.join(data['data']['related_topics']),
+        "Interactions (1h)": data['data']['interactions_1h'],
+        "Interactions (24h)": data['data']['interactions_24h'],
+        "Number of Contributors": data['data']['num_contributors'],
+        "Number of Posts": data['data']['num_posts'],
+        "Categories": ', '.join(data['data']['categories']),
+        "Trend": data['data']['trend']
     }
 
     # Handle types_count, types_interactions, types_sentiment, types_sentiment_detail
     types_count = data['data']['types_count']
     for key, value in types_count.items():
-        flattened_data[f"types_count_{key}"] = value
+        flattened_data[f"{key.replace('types_', '').replace('_', ' ').title()}"] = value
 
     types_interactions = data['data']['types_interactions']
     for key, value in types_interactions.items():
-        flattened_data[f"types_interactions_{key}"] = value
+        flattened_data[f"{key.replace('types_', '').replace('_', ' ').title()}"] = value
 
     types_sentiment = data['data']['types_sentiment']
     for key, value in types_sentiment.items():
-        flattened_data[f"types_sentiment_{key}"] = value
+        flattened_data[f"{key.replace('types_', '').replace('_', ' ').title()}"] = value
 
     types_sentiment_detail = data['data']['types_sentiment_detail']
     for key, value in types_sentiment_detail.items():
         for sub_key, sub_value in value.items():
-            flattened_data[f"types_sentiment_detail_{key}_{sub_key}"] = sub_value
+            flattened_data[f"{key.replace('types_', '').replace('_', ' ').title()} {sub_key.replace('_', ' ').title()}"] = sub_value
 
     df = pd.DataFrame([flattened_data])
     return df
@@ -65,7 +65,7 @@ def generate_topic_summary_charts(df):
     plt.savefig(os.path.join('charts', 'related_topics_wordcloud.png'))
     plt.close()
 
-    # HTML Template for Chart.js
+    # HTML Template for DataTables
     html_template = """
     <!DOCTYPE html>
     <html lang="en">
@@ -73,11 +73,13 @@ def generate_topic_summary_charts(df):
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Topic Summary</title>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
     </head>
     <body>
-        <h1>Topic Summary Table</h1>
-        <table border="1">
+        <h1>Meta Summary Table</h1>
+        <table id="summaryTable" class="display">
             <thead>
                 <tr>
                     {% for column in columns %}
@@ -95,60 +97,14 @@ def generate_topic_summary_charts(df):
                 {% endfor %}
             </tbody>
         </table>
-
-        <h1>Interactions by Type</h1>
-        <canvas id="interactionsByTypeChart"></canvas>
         <script>
-            var ctx = document.getElementById('interactionsByTypeChart').getContext('2d');
-            var interactionsByTypeChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: {{ interaction_types | safe }},
-                    datasets: [{
-                        label: 'Interactions',
-                        data: {{ interactions | safe }},
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        x: { title: { display: true, text: 'Type' }},
-                        y: { title: { display: true, text: 'Interactions' }}
-                    }
-                }
+            $(document).ready(function() {
+                $('#summaryTable').DataTable();
             });
         </script>
 
-        <h1>Sentiment Analysis by Type</h1>
-        <canvas id="sentimentAnalysisChart"></canvas>
-        <script>
-            var ctx2 = document.getElementById('sentimentAnalysisChart').getContext('2d');
-            var sentimentAnalysisChart = new Chart(ctx2, {
-                type: 'bar',
-                data: {
-                    labels: {{ sentiment_types | safe }},
-                    datasets: [{
-                        label: 'Sentiment Score',
-                        data: {{ sentiment_scores | safe }},
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        x: { title: { display: true, text: 'Type' }},
-                        y: { title: { display: true, text: 'Sentiment Score' }}
-                    }
-                }
-            });
-        </script>
-
-        <h1>Related Topics Word Cloud</h1>
+        <h1>Word Cloud</h1>
         <img src="related_topics_wordcloud.png" alt="Related Topics Word Cloud">
-
     </body>
     </html>
     """
@@ -156,11 +112,7 @@ def generate_topic_summary_charts(df):
     # Prepare data for templates
     data = {
         "columns": df.columns.tolist(),
-        "data": df.values.tolist(),
-        "interaction_types": [col.replace('Types Interactions ', '') for col in df.columns if col.startswith("Types Interactions ")],
-        "interactions": [df[col].iloc[0] for col in df.columns if col.startswith("Types Interactions ")],
-        "sentiment_types": [col.replace('Types Sentiment ', '') for col in df.columns if col.startswith("Types Sentiment ")],
-        "sentiment_scores": [df[col].iloc[0] for col in df.columns if col.startswith("Types Sentiment ")]
+        "data": df.values.tolist()
     }
 
     # Render HTML with data

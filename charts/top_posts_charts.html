@@ -1,0 +1,3336 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Top Posts Visualization</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    </head>
+    <body>
+        <h1>Top Posts Visualization</h1>
+
+        <h2>Top Posts Table</h2>
+        <table id="topPostsTable" class="display">
+            <thead>
+                <tr>
+                    
+                    <th>id</th>
+                    
+                    <th>post_type</th>
+                    
+                    <th>post_title</th>
+                    
+                    <th>post_link</th>
+                    
+                    <th>post_created</th>
+                    
+                    <th>post_sentiment</th>
+                    
+                    <th>creator_id</th>
+                    
+                    <th>creator_name</th>
+                    
+                    <th>creator_display_name</th>
+                    
+                    <th>creator_followers</th>
+                    
+                    <th>creator_avatar</th>
+                    
+                    <th>interactions_24h</th>
+                    
+                    <th>interactions_total</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    
+                    <td>1818259483581464645</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$WIF 
+
+LTF 
+
+#wif #wifusdt #dogwifhat</td>
+                    
+                    <td>https://twitter.com/pauloricci8kk/status/1818259483581464645</td>
+                    
+                    <td>2024-07-30 12:16:57</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1649840755966345216</td>
+                    
+                    <td>pauloricci8kk</td>
+                    
+                    <td>Paulo Ricci</td>
+                    
+                    <td>2141</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1709600237122170880/tBJlWEtA_200x200.jpg</td>
+                    
+                    <td>1032</td>
+                    
+                    <td>1033</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817991712049885413</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>The thesis is simple 
+$BAG</td>
+                    
+                    <td>https://twitter.com/wifbag/status/1817991712049885413</td>
+                    
+                    <td>2024-07-29 18:32:55</td>
+                    
+                    <td>3.24</td>
+                    
+                    <td>twitter::1766677944687099904</td>
+                    
+                    <td>wifbag</td>
+                    
+                    <td>catwifbag</td>
+                    
+                    <td>8958</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1766678153320071169/DNBVOmYv_200x200.png</td>
+                    
+                    <td>1355</td>
+                    
+                    <td>2159</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>7378986303548951841</td>
+                    
+                    <td>tiktok-video</td>
+                    
+                    <td>Top 3 #memecoins for the #bullmarket #altcoins #memes </td>
+                    
+                    <td>https://www.tiktok.com/@crypto_pedro/video/7378986303548951841</td>
+                    
+                    <td>2024-06-10 21:15:37</td>
+                    
+                    <td>3.2</td>
+                    
+                    <td>tiktok::7076486308268459013</td>
+                    
+                    <td>crypto_pedro</td>
+                    
+                    <td>Pedro Teixeira</td>
+                    
+                    <td>18200</td>
+                    
+                    <td>http://p16-amd-va.tiktokcdn.com/tos-maliva-avt-0068/8e01400bac0f8ce82c2b36524438e700~tplv-tiktokx-cropcenter-q:100:100:q75.webp?nonce=72932&ps=95&refresh_token=ce208d53e151598ce67da0a8f1c38ef1&s=AWEME_DETAIL&sc=avatar&shcp=1d1a97fc&shp=45126217&t=46</td>
+                    
+                    <td>955</td>
+                    
+                    <td>35857</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817852244466794817</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>wif to $100</td>
+                    
+                    <td>https://twitter.com/DocumentingWIF/status/1817852244466794817</td>
+                    
+                    <td>2024-07-29 09:18:43</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1770016076325093376</td>
+                    
+                    <td>DocumentingWIF</td>
+                    
+                    <td>Documenting dogwifhat 📄🐶🧢</td>
+                    
+                    <td>1120</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1770037886093541376/nAjxQwcd_200x200.jpg</td>
+                    
+                    <td>1272</td>
+                    
+                    <td>3692</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>7325391170392050976</td>
+                    
+                    <td>tiktok-video</td>
+                    
+                    <td>Wif is going to flip Bonk as it becomes solanas second largest memecoin #wif #dogwifhat #dogwithhat #solana #memecoin #meme </td>
+                    
+                    <td>https://www.tiktok.com/@365cryptos/video/7325391170392050976</td>
+                    
+                    <td>2024-01-18 10:59:10</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>tiktok::7307370243423618080</td>
+                    
+                    <td>365cryptos</td>
+                    
+                    <td>365Crypto</td>
+                    
+                    <td>3236</td>
+                    
+                    <td>http://p16-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-euttp/effcf11b6fed4422a00f25ecdb486621~tplv-tiktokx-cropcenter-q:100:100:q75.webp?nonce=78472&ps=95&refresh_token=f9ac97a7a28346b0820643c89ddefc4d&s=AWEME_DETAIL&sc=avatar&shcp=1d1a97fc&shp=45126217&t=46</td>
+                    
+                    <td>656</td>
+                    
+                    <td>70497</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1810733918414590424</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>The Dog has a hat, the cat has a bag:
+
+What is catwifbag?
+
+catwifbag is a meme originally inspired by a post from Ma Babez @achichuchu 
+She is the owner of the dogwifhat dog 'Achi', catwifbag cat "Chuchu" and the original creator of the viral dogwifhat meme.
+
+$BAG 👇</td>
+                    
+                    <td>https://twitter.com/wifbag/status/1810733918414590424</td>
+                    
+                    <td>2024-07-09 17:53:02</td>
+                    
+                    <td>3.19</td>
+                    
+                    <td>twitter::1766677944687099904</td>
+                    
+                    <td>wifbag</td>
+                    
+                    <td>catwifbag</td>
+                    
+                    <td>8957</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1766678153320071169/DNBVOmYv_200x200.png</td>
+                    
+                    <td>1579</td>
+                    
+                    <td>5252</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817184184177193085</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>The easiest 100x in your life. $bag and $Wif live under the same roof and have the same irl owner. 4 months of accumulation. It reminds me of $bonk chart and we know what happened... It’s literally no brainer. 22x till ath and 1000x to reach dogwifhat market cap. The most bullish chart on $sol</td>
+                    
+                    <td>https://twitter.com/SaiyanCryptoZ/status/1817184184177193085</td>
+                    
+                    <td>2024-07-27 13:04:05</td>
+                    
+                    <td>3.03</td>
+                    
+                    <td>twitter::882603965514477569</td>
+                    
+                    <td>SaiyanCryptoZ</td>
+                    
+                    <td>SaiyanCryptoZ</td>
+                    
+                    <td>860</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1741854556714065920/m3_-CA6O_200x200.jpg</td>
+                    
+                    <td>414</td>
+                    
+                    <td>4083</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817998418221920539</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Kind of how the Dogwifhat community spends pennies and continues to achieve so much compared to VC backed marketing budgets where they see a price list and just pay it. 
+
+Study $WIF</td>
+                    
+                    <td>https://twitter.com/GamesMasterFlex/status/1817998418221920539</td>
+                    
+                    <td>2024-07-29 18:59:34</td>
+                    
+                    <td>3.4</td>
+                    
+                    <td>twitter::4872130923</td>
+                    
+                    <td>GamesMasterFlex</td>
+                    
+                    <td>GamesMaster.wif 🇬🇧‣🇺🇸</td>
+                    
+                    <td>3756</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1779732869645991936/2gRZ03ej_200x200.jpg</td>
+                    
+                    <td>756</td>
+                    
+                    <td>1921</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818030092305752295</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>...that's a LOT of $WIF 
+ellio dogwifhat 🧢</td>
+                    
+                    <td>https://twitter.com/bohotrades/status/1818030092305752295</td>
+                    
+                    <td>2024-07-29 21:05:26</td>
+                    
+                    <td>3.31</td>
+                    
+                    <td>twitter::142963655</td>
+                    
+                    <td>bohotrades</td>
+                    
+                    <td>b o h o 🌊Σ</td>
+                    
+                    <td>1423</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1815767037568020480/kDBapjgz_200x200.jpg</td>
+                    
+                    <td>732</td>
+                    
+                    <td>728</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1816627821563031600</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Literally nothing healthier for the industry than 
+
+1) getting GOX behind us
+2) sending Grayscale to literal zero
+3) stopping the ETF’s with ETH 
+
+SOL boys in disbelief
+
+But trust me you don’t want a SOL ETF
+
+If we get a SOL one weel have a dogwifhat ETF too
+
+You think that will help with liquidity?
+
+You think your coins will ever pump again?
+
+This industry will get sent back to the stone age as our only source of new money is diluted across 1,000x garbage tier products
+
+And people wonder why I hate SOL lol
+
+You idiots are calling for the end of everything just to pump your retardmemecoin#4000
+
+No.
+
+BTC and ETH only.
+
+Healthy industry with the two big dogs at the top and steady institutional capital.</td>
+                    
+                    <td>https://twitter.com/kale_abe/status/1816627821563031600</td>
+                    
+                    <td>2024-07-26 00:13:18</td>
+                    
+                    <td>3.16</td>
+                    
+                    <td>twitter::1282858909833801728</td>
+                    
+                    <td>kale_abe</td>
+                    
+                    <td>Kale Abe</td>
+                    
+                    <td>72691</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1655769329793744898/h3kzCYBV_200x200.jpg</td>
+                    
+                    <td>596</td>
+                    
+                    <td>8178</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1767938938109415801</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>bink! dogwifhat on sphere fully funded ✅</td>
+                    
+                    <td>https://twitter.com/blknoiz06/status/1767938938109415801</td>
+                    
+                    <td>2024-03-13 15:41:04</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::973261472</td>
+                    
+                    <td>blknoiz06</td>
+                    
+                    <td>Ansem 🐂🀄️</td>
+                    
+                    <td>477239</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1813008742624997376/cN6aRUge_200x200.jpg</td>
+                    
+                    <td>153</td>
+                    
+                    <td>3111226</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>7397444292765158662</td>
+                    
+                    <td>tiktok-video</td>
+                    
+                    <td>Animation for giga  #crypto #coin #pepe #giga #dogwifhat </td>
+                    
+                    <td>https://www.tiktok.com/@umi.labs/video/7397444292765158662</td>
+                    
+                    <td>2024-07-30 15:02:01</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>tiktok::7395614268450178054</td>
+                    
+                    <td>umi.labs</td>
+                    
+                    <td>Umi Labs</td>
+                    
+                    <td>1</td>
+                    
+                    <td>http://p16-amd-va.tiktokcdn.com/tos-maliva-avt-0068/d77a8b8bebb475f865b46a4cdd3cd65d~tplv-tiktokx-cropcenter-q:100:100:q75.webp?nonce=78936&ps=95&refresh_token=7b527d043e39f5e53ca14e6d74984221&s=AWEME_DETAIL&sc=avatar&shcp=1d1a97fc&shp=45126217&t=46</td>
+                    
+                    <td>72</td>
+                    
+                    <td>72</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>pSfCbNRCdi0</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>🟢 WIF USDT DOGWIFHAT Live Trading Educational chart</td>
+                    
+                    <td>https://youtube.com/watch?v=pSfCbNRCdi0</td>
+                    
+                    <td>2024-03-05 12:23:24</td>
+                    
+                    <td>3.26</td>
+                    
+                    <td>youtube::UCsasPMe7Jaa8RM4B_j8Qhxg</td>
+                    
+                    <td>XRPGEN</td>
+                    
+                    <td>Forex Education Live</td>
+                    
+                    <td>42</td>
+                    
+                    <td>https://yt3.ggpht.com/UtEhhI5nBa7MRGnam0FuAYmOf2u1KMUvL2NHbVKLVDUp96U8sDKaoDS75wtO_7Y1csTUo3lP1w=s88-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>48</td>
+                    
+                    <td>41641</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1766680047547494658</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>iight bros, it's time, we're putting dogwifhat on the vegas sphere 🫨</td>
+                    
+                    <td>https://twitter.com/blknoiz06/status/1766680047547494658</td>
+                    
+                    <td>2024-03-10 04:18:41</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::973261472</td>
+                    
+                    <td>blknoiz06</td>
+                    
+                    <td>Ansem 🐂🀄️</td>
+                    
+                    <td>477275</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1813008742624997376/cN6aRUge_200x200.jpg</td>
+                    
+                    <td>205</td>
+                    
+                    <td>5408542</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817851487705292882</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Solana Memecoins To Buy: $HINU, $BONK, $WIF, And $BOME
+
+The Solana blockchain boasts several prime memecoins, but four projects stand out for their excellent profit potential: Husky Inu ($HINU), Bonk ($BONK), Dogwifhat ($WIF), and BOOK OF MEME ($BOME). 
+
+</td>
+                    
+                    <td>https://twitter.com/cryptodailyuk/status/1817851487705292882</td>
+                    
+                    <td>2024-07-29 09:15:43</td>
+                    
+                    <td>3.04</td>
+                    
+                    <td>twitter::910120075637686272</td>
+                    
+                    <td>cryptodailyuk</td>
+                    
+                    <td>Crypto Daily™</td>
+                    
+                    <td>87364</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1742124567101890561/hnr9hujN_200x200.jpg</td>
+                    
+                    <td>5563</td>
+                    
+                    <td>6146</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1816925129735012853</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>if this nigga saylor can say bitcoin is going to one quadrillion i sure as hell can say dogwifhat going to $100B</td>
+                    
+                    <td>https://twitter.com/blknoiz06/status/1816925129735012853</td>
+                    
+                    <td>2024-07-26 19:54:42</td>
+                    
+                    <td>2.33</td>
+                    
+                    <td>twitter::973261472</td>
+                    
+                    <td>blknoiz06</td>
+                    
+                    <td>Ansem 🐂🀄️</td>
+                    
+                    <td>477263</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1813008742624997376/cN6aRUge_200x200.jpg</td>
+                    
+                    <td>219</td>
+                    
+                    <td>149577</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1ebvbt1</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>Why BAMBIT is Poised to Join the Billion-Dollar Crypto Club! 2022 x Potential </td>
+                    
+                    <td>https://reddit.com/1ebvbt1</td>
+                    
+                    <td>2024-07-25 13:47:40</td>
+                    
+                    <td>2.72</td>
+                    
+                    <td>reddit::t2_7px669gj</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>10284</td>
+                    
+                    <td>https://i.redd.it/snoovatar/avatars/8dafc1b1-ad34-42ce-98f6-8f58186dda17-headshot.png</td>
+                    
+                    <td>14</td>
+                    
+                    <td>189</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1ebvbyn</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>Explore BAMBIT: The Cutest Panda in Crypto with Big Dreams!</td>
+                    
+                    <td>https://reddit.com/1ebvbyn</td>
+                    
+                    <td>2024-07-25 13:47:53</td>
+                    
+                    <td>2.83</td>
+                    
+                    <td>reddit::t2_7px669gj</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>10284</td>
+                    
+                    <td>https://i.redd.it/snoovatar/avatars/8dafc1b1-ad34-42ce-98f6-8f58186dda17-headshot.png</td>
+                    
+                    <td>10</td>
+                    
+                    <td>173</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818099335273251066</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>All Pump, No Dump. 
+Join Club $INU Today.
+
+#Shiba #Doge #DogWifHat #BabyDoge #Floki</td>
+                    
+                    <td>https://twitter.com/InuInuOnEth/status/1818099335273251066</td>
+                    
+                    <td>2024-07-30 01:40:34</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1818024462446641158</td>
+                    
+                    <td>InuInuOnEth</td>
+                    
+                    <td>INU | $INU</td>
+                    
+                    <td>200</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1818061319347818496/6YwOAV0I_200x200.jpg</td>
+                    
+                    <td>559</td>
+                    
+                    <td>557</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817304839275028815</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>catwifhat and dogwifhat getting gnarly 🌊</td>
+                    
+                    <td>https://twitter.com/catwifhatsolana/status/1817304839275028815</td>
+                    
+                    <td>2024-07-27 21:03:32</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::902030171380830208</td>
+                    
+                    <td>catwifhatsolana</td>
+                    
+                    <td>catwifhat $CWIF</td>
+                    
+                    <td>217229</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1782966859639181314/9v04YHyb_200x200.jpg</td>
+                    
+                    <td>152</td>
+                    
+                    <td>11692</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817381068221345838</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$WIF fans here are some free phone backgrounds
+
+#dogwifhat #wif #wallpaper #minecraft</td>
+                    
+                    <td>https://twitter.com/flexstackAI/status/1817381068221345838</td>
+                    
+                    <td>2024-07-28 02:06:26</td>
+                    
+                    <td>3.38</td>
+                    
+                    <td>twitter::1393395686117318663</td>
+                    
+                    <td>flexstackAI</td>
+                    
+                    <td>FlexStack</td>
+                    
+                    <td>200816</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1770287271029424128/ukB7emPi_200x200.jpg</td>
+                    
+                    <td>88</td>
+                    
+                    <td>2477</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1816609379032138087</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>dogwifhat 🤝 Diamante
+
+$500 ➡️ $85,161.60</td>
+                    
+                    <td>https://twitter.com/rollbitcom/status/1816609379032138087</td>
+                    
+                    <td>2024-07-25 23:00:01</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1227923263533305857</td>
+                    
+                    <td>rollbitcom</td>
+                    
+                    <td>Rollbit</td>
+                    
+                    <td>180416</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1813299453727498240/TjMsFK7K_200x200.jpg</td>
+                    
+                    <td>37</td>
+                    
+                    <td>4037</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817312833916301677</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$WIF</td>
+                    
+                    <td>https://twitter.com/DocumentingWIF/status/1817312833916301677</td>
+                    
+                    <td>2024-07-27 21:35:18</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1770016076325093376</td>
+                    
+                    <td>DocumentingWIF</td>
+                    
+                    <td>Documenting dogwifhat 📄🐶🧢</td>
+                    
+                    <td>1120</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1770037886093541376/nAjxQwcd_200x200.jpg</td>
+                    
+                    <td>25</td>
+                    
+                    <td>4319</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>DP60tY70keo</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>Dog with Hat lost his hat. 🐶🎩 #animation #meme #dogwifhat #cartoon #crypto #duck</td>
+                    
+                    <td>https://youtube.com/watch?v=DP60tY70keo</td>
+                    
+                    <td>2024-06-27 19:00:06</td>
+                    
+                    <td>3.25</td>
+                    
+                    <td>youtube::UCoaq3uoxGuH4_hoqSXEMcmw</td>
+                    
+                    <td>DougTheDuckSol</td>
+                    
+                    <td>Doug the Duck</td>
+                    
+                    <td>534</td>
+                    
+                    <td>https://yt3.ggpht.com/csCC_EosaxcUMEjGCehBfokZuLAWb22ur1OJ8UsnTE6lfBXuBdUYy4hgbV648ckjoaZ4Fgm5R9o=s88-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>11</td>
+                    
+                    <td>15018</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1ccr2xc</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>How it goes. </td>
+                    
+                    <td>https://reddit.com/1ccr2xc</td>
+                    
+                    <td>2024-04-25 12:48:23</td>
+                    
+                    <td>2.69</td>
+                    
+                    <td>reddit::t2_93oyay94</td>
+                    
+                    <td>The_Probes</td>
+                    
+                    <td>The_Probes</td>
+                    
+                    <td>9384</td>
+                    
+                    <td>https://styles.redditmedia.com/t5_4giss7/styles/profileIcon_pi8agtkzzooa1.jpg?width=256&height=256&crop=256:256,smart&s=fb05cf6c02d5207bfa16dcd951890a810f52b61c</td>
+                    
+                    <td>4</td>
+                    
+                    <td>138</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818102702678679898</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Come join the $INU Army and together we will form the strongest pack on #ETH 
+
+#Inu #Floki #Doge #Shiba #DogWifHat</td>
+                    
+                    <td>https://twitter.com/InuInuOnEth/status/1818102702678679898</td>
+                    
+                    <td>2024-07-30 01:53:57</td>
+                    
+                    <td>3.18</td>
+                    
+                    <td>twitter::1818024462446641158</td>
+                    
+                    <td>InuInuOnEth</td>
+                    
+                    <td>INU | $INU</td>
+                    
+                    <td>203</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1818061319347818496/6YwOAV0I_200x200.jpg</td>
+                    
+                    <td>634</td>
+                    
+                    <td>636</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817361257344950737</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Can you imagine years ago, @blknoiz06 was like this is the first dogwifhat, instead of the one the community chose
+
+The fall off will be researched to unprecedented levels</td>
+                    
+                    <td>https://twitter.com/CookerFlips/status/1817361257344950737</td>
+                    
+                    <td>2024-07-28 00:47:43</td>
+                    
+                    <td>3.17</td>
+                    
+                    <td>twitter::1189381231198134272</td>
+                    
+                    <td>CookerFlips</td>
+                    
+                    <td>Cooker | Darn.eth | Kms.eth</td>
+                    
+                    <td>69569</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1815621576660021248/CgjU-9-L_200x200.jpg</td>
+                    
+                    <td>358</td>
+                    
+                    <td>12030</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1736676424977719528</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>so it's a dog, but wif, a hat 
+
+these new crypto memes spontaneously emerge as viral symbols prevalent in digital culture, a rallying cry for those internet natives disllusioned with the typical 9-to-5 grind - dogwifhat may quite literally be the first dog coin to ever hit $1.00</td>
+                    
+                    <td>https://twitter.com/blknoiz06/status/1736676424977719528</td>
+                    
+                    <td>2023-12-18 09:15:00</td>
+                    
+                    <td>2.85</td>
+                    
+                    <td>twitter::973261472</td>
+                    
+                    <td>blknoiz06</td>
+                    
+                    <td>Ansem 🐂🀄️</td>
+                    
+                    <td>477263</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1813008742624997376/cN6aRUge_200x200.jpg</td>
+                    
+                    <td>187</td>
+                    
+                    <td>352514</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1816168635645284511</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>3. High Cap
+
+● @dogwifcoin - $WIF
+
+Popular meme Dogwifhat vibes wif frens onchain
+
+$WIF is a popular memecoin on Solana. While it lacks any known utility, it boasts a strong community.</td>
+                    
+                    <td>https://twitter.com/wacy_time1/status/1816168635645284511</td>
+                    
+                    <td>2024-07-24 17:48:40</td>
+                    
+                    <td>3.22</td>
+                    
+                    <td>twitter::1410927296614178816</td>
+                    
+                    <td>wacy_time1</td>
+                    
+                    <td>AlΞx Wacy 🌐</td>
+                    
+                    <td>180571</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1645048040133210123/gUPtadna_200x200.jpg</td>
+                    
+                    <td>114</td>
+                    
+                    <td>4119</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1809558053789827340</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>dogwifhat > dog without a hat</td>
+                    
+                    <td>https://twitter.com/Bitstamp/status/1809558053789827340</td>
+                    
+                    <td>2024-07-06 12:00:34</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::352518189</td>
+                    
+                    <td>Bitstamp</td>
+                    
+                    <td>Bitstamp</td>
+                    
+                    <td>503205</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1816025841446313984/fiWb1aBR_200x200.jpg</td>
+                    
+                    <td>43</td>
+                    
+                    <td>53972</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>pP3U9hGmtOs</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>CAT IN A DOGS WORLD Price Prediction - Can $MEW STILL 10X Your Money?!</td>
+                    
+                    <td>https://youtube.com/watch?v=pP3U9hGmtOs</td>
+                    
+                    <td>2024-03-30 02:30:32</td>
+                    
+                    <td>3.24</td>
+                    
+                    <td>youtube::UCq1LxxUw6DVELFN0wOmLLQw</td>
+                    
+                    <td>CryptonewsCom</td>
+                    
+                    <td>Cryptonews</td>
+                    
+                    <td>10000</td>
+                    
+                    <td>https://yt3.ggpht.com/p6grLqZ34JSraXyWSkcNSYsBPxWcxJliTdGsL_tRs0jBzahHjSvMVTxlEBMIHo2N2MTQvwpb=s88-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>8</td>
+                    
+                    <td>2718</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1dv54h9</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>Whale Deposits WIF Amidst 15% Market Fall</td>
+                    
+                    <td>https://reddit.com/1dv54h9</td>
+                    
+                    <td>2024-07-04 11:53:37</td>
+                    
+                    <td>2.82</td>
+                    
+                    <td>reddit::t2_8jq58uvv</td>
+                    
+                    <td>yogesh_culkin99</td>
+                    
+                    <td>yogesh_culkin99</td>
+                    
+                    <td>10961</td>
+                    
+                    <td>https://i.redd.it/snoovatar/avatars/b0399bba-a641-439c-9efc-edb4ee7d32a1-headshot.png</td>
+                    
+                    <td>2</td>
+                    
+                    <td>44</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818002539125817545</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>@CoinbaseAssets @coinbase @CoinbaseExch Is Stader another name for DogWifHat?</td>
+                    
+                    <td>https://twitter.com/CryptoCurb/status/1818002539125817545</td>
+                    
+                    <td>2024-07-29 19:15:56</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::878275753842008064</td>
+                    
+                    <td>CryptoCurb</td>
+                    
+                    <td>Curb◎</td>
+                    
+                    <td>34932</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1806079994000478208/PyfujI-a_200x200.jpg</td>
+                    
+                    <td>1255</td>
+                    
+                    <td>1255</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817771166003855419</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Weekly Alpha Trades
+
+1/10) #Dogwifhat rallied +9% last 1w. As reported by Forbes, Dogwifhat was the best-performing cryptocurrency in the first half of 2024, boasting a 1300% increase since the start of the year. The meme coin is a new favorite among investors, beating out other popular large-cap meme coins, #Dogecoin(+38%) and #ShibaInu (+60%). Mkt cap $2.5 bn.</td>
+                    
+                    <td>https://twitter.com/10x_Research/status/1817771166003855419</td>
+                    
+                    <td>2024-07-29 03:56:33</td>
+                    
+                    <td>3.11</td>
+                    
+                    <td>twitter::1577559897197010944</td>
+                    
+                    <td>10x_Research</td>
+                    
+                    <td>10x Research</td>
+                    
+                    <td>6509</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1770969118306660352/DLKfLwDj_200x200.jpg</td>
+                    
+                    <td>745</td>
+                    
+                    <td>1305</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>ip70_4z_Hj0</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>🔴Live DogWifHat(WIF) 5 Minute Buy And Sell Signals-Trading Signals-Scalping Strategy-Diamond Algo-</td>
+                    
+                    <td>https://youtube.com/watch?v=ip70_4z_Hj0</td>
+                    
+                    <td>2024-03-05 12:33:15</td>
+                    
+                    <td>3.33</td>
+                    
+                    <td>youtube::UC1t1Y2T2jZKnVSsE4D5jQPw</td>
+                    
+                    <td>forexcryptolive</td>
+                    
+                    <td>Forex & Crypto Live</td>
+                    
+                    <td>34400</td>
+                    
+                    <td>https://yt3.ggpht.com/LBWH_6ipOrQnkjJa3I9ZjjmPVMrMGH4e8lNmv1b1a7gxiKMS12tfXnoYLmXM_UiiqnFpIuuznfg=s88-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>186</td>
+                    
+                    <td>34495</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818167307081847290</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>📰 Very good news for Pepe, Book of Meme, and Dogwifhat tokens
+
+
+
+$PEPE #pepe #solana #world</td>
+                    
+                    <td>https://twitter.com/InvezzPortal/status/1818167307081847290</td>
+                    
+                    <td>2024-07-30 06:10:40</td>
+                    
+                    <td>3.27</td>
+                    
+                    <td>twitter::531415099</td>
+                    
+                    <td>InvezzPortal</td>
+                    
+                    <td>invezz.com</td>
+                    
+                    <td>6679</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1324079025866854400/zkUYZwv0_200x200.png</td>
+                    
+                    <td>124</td>
+                    
+                    <td>123</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>Jlw1BLI9ToE</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>CATDOG - a new 100x Crypto opportunity (SERIOUSLY)</td>
+                    
+                    <td>https://youtube.com/watch?v=Jlw1BLI9ToE</td>
+                    
+                    <td>2024-07-28 12:50:04</td>
+                    
+                    <td>3.13</td>
+                    
+                    <td>youtube::UCeT4kaW7WXvfBmSzBvHC54A</td>
+                    
+                    <td>winalldayy</td>
+                    
+                    <td>WinAllDay</td>
+                    
+                    <td>234</td>
+                    
+                    <td>https://yt3.ggpht.com/eJMOe9P7oxHgXaeBpHRwekDXE0jERR4qVk70tCJ9VhJ3GZOlbsk4_cSeE9eB3onT9__XfixGzQ=s88-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>108</td>
+                    
+                    <td>457</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817931837395681678</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>📈 Over the past 2 weeks, $WIF surged 39% to $2.56, hitting a $2.5B market cap!
+
+📊 WIF is consolidating between the 0.618 and 0.786 Fibonacci levels, showing bullish signs with moving average support.
+
+#dogwifhat #Solana #Crypto</td>
+                    
+                    <td>https://twitter.com/CoinEdition/status/1817931837395681678</td>
+                    
+                    <td>2024-07-29 14:35:00</td>
+                    
+                    <td>3.08</td>
+                    
+                    <td>twitter::1557282915410665472</td>
+                    
+                    <td>CoinEdition</td>
+                    
+                    <td>Coin Edition: Your Crypto News Edge ️</td>
+                    
+                    <td>8385</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1742161851121618944/8_p20VMy_200x200.jpg</td>
+                    
+                    <td>84</td>
+                    
+                    <td>199</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817958224311763362</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>this will age like a fine bordeaux shiraz 
+dogwifhat 🧢 
+$WIF</td>
+                    
+                    <td>https://twitter.com/bohotrades/status/1817958224311763362</td>
+                    
+                    <td>2024-07-29 16:19:51</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::142963655</td>
+                    
+                    <td>bohotrades</td>
+                    
+                    <td>b o h o 🌊Σ</td>
+                    
+                    <td>1423</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1815767037568020480/kDBapjgz_200x200.jpg</td>
+                    
+                    <td>83</td>
+                    
+                    <td>425</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817662296845697246</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>We all know the original Doge meme was a huge hit—totally organic, not forced. That’s real meme magic. Now, there’s this new coin, $Neiro, but it’s all hype. It doesn’t have what made $Doge special.
+
+And that’s exactly what we have $wif Dogwifhat. It’s not just another coin, it’s a movement.
+
+#Dogwifhat is the true successor. It’s not about lineage; it’s about that authentic, viral charm. Achi, our Dogwifhat star, wasn’t made to be a meme, he just became one because he’s got that special something.
+
+The king is dead, long live the King.</td>
+                    
+                    <td>https://twitter.com/GamesMasterFlex/status/1817662296845697246</td>
+                    
+                    <td>2024-07-28 20:43:56</td>
+                    
+                    <td>3.07</td>
+                    
+                    <td>twitter::4872130923</td>
+                    
+                    <td>GamesMasterFlex</td>
+                    
+                    <td>GamesMaster.wif 🇬🇧‣🇺🇸</td>
+                    
+                    <td>3756</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1779732869645991936/2gRZ03ej_200x200.jpg</td>
+                    
+                    <td>77</td>
+                    
+                    <td>1450</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817916630199845323</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Bitcoin dominance highest weekly close in years. 
+
+Cryptotards everywhere realizing all they had to do is hold #bitcoin instead of worrying about when to pivot out of CumRocket to Dogwifhat.</td>
+                    
+                    <td>https://twitter.com/NY_HODL/status/1817916630199845323</td>
+                    
+                    <td>2024-07-29 13:34:34</td>
+                    
+                    <td>2.86</td>
+                    
+                    <td>twitter::1130513116373159936</td>
+                    
+                    <td>NY_HODL</td>
+                    
+                    <td>NY_HODL is stacking sats & jammin to Creeds Higher</td>
+                    
+                    <td>2523</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1797099921616621568/tGnTlqmS_200x200.jpg</td>
+                    
+                    <td>74</td>
+                    
+                    <td>128</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818213102006976636</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Dogwifhat (WIF) Price Breakout Soon? Trading Volume Surges Amid Bullish Price Prediction
+
+</td>
+                    
+                    <td>https://twitter.com/johnmorganFL/status/1818213102006976636</td>
+                    
+                    <td>2024-07-30 09:12:38</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::2235329532</td>
+                    
+                    <td>johnmorganFL</td>
+                    
+                    <td>John Morgan</td>
+                    
+                    <td>32148</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1707510467936309248/ALkIbh_U_200x200.jpg</td>
+                    
+                    <td>67</td>
+                    
+                    <td>67</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>RirkpR2QoMs</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>How I Find 100x Memecoins Before the Hype</td>
+                    
+                    <td>https://youtube.com/watch?v=RirkpR2QoMs</td>
+                    
+                    <td>2024-03-05 21:53:13</td>
+                    
+                    <td>3.08</td>
+                    
+                    <td>youtube::UCcrEA_xd9Ldf1C8DIJYdyyA</td>
+                    
+                    <td>VirtualBacon</td>
+                    
+                    <td>VirtualBacon</td>
+                    
+                    <td>355000</td>
+                    
+                    <td>https://yt3.ggpht.com/atj6qleGGxNX39X3zBIJ17oG3MdEfd90U8lL5MpqKhxboO20_FsOJIrnEKuEZvdiKjcTx6ajGg=s176-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>64</td>
+                    
+                    <td>241501</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818026285492486244</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>@elliotrades dogwifhat 🧢 
+$WIF</td>
+                    
+                    <td>https://twitter.com/bohotrades/status/1818026285492486244</td>
+                    
+                    <td>2024-07-29 20:50:18</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::142963655</td>
+                    
+                    <td>bohotrades</td>
+                    
+                    <td>b o h o 🌊Σ</td>
+                    
+                    <td>1422</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1815767037568020480/kDBapjgz_200x200.jpg</td>
+                    
+                    <td>58</td>
+                    
+                    <td>58</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818196528491561261</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Dogwifhat Price Prediction: Should You Consider Jumping Ship to 5thScape (5SCAPE)?
+
+</td>
+                    
+                    <td>https://twitter.com/johnmorganFL/status/1818196528491561261</td>
+                    
+                    <td>2024-07-30 08:06:47</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::2235329532</td>
+                    
+                    <td>johnmorganFL</td>
+                    
+                    <td>John Morgan</td>
+                    
+                    <td>32164</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1707510467936309248/ALkIbh_U_200x200.jpg</td>
+                    
+                    <td>57</td>
+                    
+                    <td>57</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818193818006569276</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Dogwifhat ( $WIF) Price Breakout Soon? Trading Volume Surges Amid Bullish Price Prediction
+</td>
+                    
+                    <td>https://twitter.com/blockonomi/status/1818193818006569276</td>
+                    
+                    <td>2024-07-30 07:56:01</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::34351198</td>
+                    
+                    <td>blockonomi</td>
+                    
+                    <td>Blockonomi</td>
+                    
+                    <td>10351</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/942694787358035969/R5iojKN3_200x200.jpg</td>
+                    
+                    <td>56</td>
+                    
+                    <td>56</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818247996187857161</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Will #dogwifhat crash to 0 in August?
+📉 While a complete crash seems unlikely, investors tread with caution as $WIF's recent dip signals potential vulnerabilities. Is it an investment opportunity or a risk?
+Decide for yourself: 
+</td>
+                    
+                    <td>https://twitter.com/CryptotickerIo/status/1818247996187857161</td>
+                    
+                    <td>2024-07-30 11:31:18</td>
+                    
+                    <td>2.65</td>
+                    
+                    <td>twitter::883260123241689089</td>
+                    
+                    <td>CryptotickerIo</td>
+                    
+                    <td>CryptoTicker</td>
+                    
+                    <td>3252</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1719732275670102016/EXnEISMk_200x200.jpg</td>
+                    
+                    <td>44</td>
+                    
+                    <td>44</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818197670776709302</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>JUST IN: Dogwifhat (WIF) Trading Volume Spikes Amid Bullish Predictions
+
+Dogwifhat (WIF) sees a 22% gain over the past month and analysts predict it could reach $3.3 or higher. With key support levels reclaimed, bullish indicators are emerging.</td>
+                    
+                    <td>https://twitter.com/nifty0x/status/1818197670776709302</td>
+                    
+                    <td>2024-07-30 08:11:19</td>
+                    
+                    <td>3.23</td>
+                    
+                    <td>twitter::982511326466658304</td>
+                    
+                    <td>nifty0x</td>
+                    
+                    <td>Nifty</td>
+                    
+                    <td>3437</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1669853009847676928/ncp-EgCy_200x200.jpg</td>
+                    
+                    <td>40</td>
+                    
+                    <td>40</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817876045837508772</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Life-changing Crypto Projects: Evaluating Dogwifhat, Worldcoin, and Viral DeFi Platform DTX Exchange
+
+</td>
+                    
+                    <td>https://twitter.com/johnmorganFL/status/1817876045837508772</td>
+                    
+                    <td>2024-07-29 10:53:18</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::2235329532</td>
+                    
+                    <td>johnmorganFL</td>
+                    
+                    <td>John Morgan</td>
+                    
+                    <td>32157</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1707510467936309248/ALkIbh_U_200x200.jpg</td>
+                    
+                    <td>40</td>
+                    
+                    <td>100</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818086617153708095</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Solana Meme Showdown: Bonk (BONK) vs Dogwifhat (WIF). Can Either Derail The Rollblock (RBLK) Locomotive: Destination 200x...</td>
+                    
+                    <td>https://twitter.com/MintressOfMemes/status/1818086617153708095</td>
+                    
+                    <td>2024-07-30 00:50:02</td>
+                    
+                    <td>2.8</td>
+                    
+                    <td>twitter::1783458066551173120</td>
+                    
+                    <td>MintressOfMemes</td>
+                    
+                    <td>M.O.M.</td>
+                    
+                    <td>5656</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1783458556395524096/xpVsM7m9_200x200.jpg</td>
+                    
+                    <td>38</td>
+                    
+                    <td>38</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>7348514649396038942</td>
+                    
+                    <td>tiktok-video</td>
+                    
+                    <td>This dog is worth $3 Billion! #shibainu #doge #dogwifhat #elon </td>
+                    
+                    <td>https://www.tiktok.com/@ragzycrypto/video/7348514649396038942</td>
+                    
+                    <td>2024-03-20 18:31:00</td>
+                    
+                    <td>3.17</td>
+                    
+                    <td>tiktok::6883555161625740294</td>
+                    
+                    <td>ragzycrypto</td>
+                    
+                    <td>Crypto Ragzy</td>
+                    
+                    <td>219600</td>
+                    
+                    <td>http://p16.tiktokcdn-us.com/tos-useast5-avt-0068-tx/7326084764573581358~tplv-tiktokx-cropcenter-q:100:100:q75.webp?nonce=71506&ps=95&refresh_token=cfcb21e2ca3cef14788ea72419ba560c&s=AWEME_DETAIL&sc=avatar&shcp=1d1a97fc&shp=45126217&t=46</td>
+                    
+                    <td>37</td>
+                    
+                    <td>17263</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818059513284477359</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>All-Time Highs Ahead? Dogwifhat (WIF) Poised For Big Growth — Analyst
+
+</td>
+                    
+                    <td>https://twitter.com/johnmorganFL/status/1818059513284477359</td>
+                    
+                    <td>2024-07-29 23:02:20</td>
+                    
+                    <td>3.14</td>
+                    
+                    <td>twitter::2235329532</td>
+                    
+                    <td>johnmorganFL</td>
+                    
+                    <td>John Morgan</td>
+                    
+                    <td>32147</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1707510467936309248/ALkIbh_U_200x200.jpg</td>
+                    
+                    <td>37</td>
+                    
+                    <td>41</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817198706627592692</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>4M token has been burnt and we are waiting for pushing this harder. The alpha play Smoking Chicken Fish did well and we could do the same asap.
+
+Burn more and everything will go up is real
+
+Proof:
+
+#SCWIF #SmokingChickenDogwifhat $SCWIF</td>
+                    
+                    <td>https://twitter.com/SCWIF_Project/status/1817198706627592692</td>
+                    
+                    <td>2024-07-27 14:01:48</td>
+                    
+                    <td>3.16</td>
+                    
+                    <td>twitter::577476283</td>
+                    
+                    <td>SCWIF_Project</td>
+                    
+                    <td>Smoking Chicken Dogwifhat</td>
+                    
+                    <td>4371</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1817110100806455297/mkC-tM5K_200x200.jpg</td>
+                    
+                    <td>33</td>
+                    
+                    <td>5272</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1803947932678242624</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>What is $BAG?  
+
+catwifbag is a meme originally posted on Instagram by Ma Babezz, the same person who originally posted the dogwifhat meme, she is the owner of the dogwifhat dog and catwifbag cat.
+
+The Dog has a hat
+
+The Cat has a bag.</td>
+                    
+                    <td>https://twitter.com/wifbag/status/1803947932678242624</td>
+                    
+                    <td>2024-06-21 00:27:57</td>
+                    
+                    <td>3.16</td>
+                    
+                    <td>twitter::1766677944687099904</td>
+                    
+                    <td>wifbag</td>
+                    
+                    <td>catwifbag</td>
+                    
+                    <td>8954</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1766678153320071169/DNBVOmYv_200x200.png</td>
+                    
+                    <td>27</td>
+                    
+                    <td>5283</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817853520353132564</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>@fred7130 Only a matter of time before $WIF-halla</td>
+                    
+                    <td>https://twitter.com/DocumentingWIF/status/1817853520353132564</td>
+                    
+                    <td>2024-07-29 09:23:47</td>
+                    
+                    <td>3.14</td>
+                    
+                    <td>twitter::1770016076325093376</td>
+                    
+                    <td>DocumentingWIF</td>
+                    
+                    <td>Documenting dogwifhat 📄🐶🧢</td>
+                    
+                    <td>1121</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1770037886093541376/nAjxQwcd_200x200.jpg</td>
+                    
+                    <td>25</td>
+                    
+                    <td>81</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1814593591215350134</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>#CMCNews: Dogwifhat Climbs Back into Top 50 Cryptocurrencies, Gaining 50% This Week
+
+
+#Solana-based #memecoin #Dogwifhat $WIF has made a significant comeback, re-entering the top 50 #cryptocurrencies following a +49.8% increase over the past week...</td>
+                    
+                    <td>https://twitter.com/CoinMarketCap/status/1814593591215350134</td>
+                    
+                    <td>2024-07-20 09:30:00</td>
+                    
+                    <td>3.51</td>
+                    
+                    <td>twitter::2260491445</td>
+                    
+                    <td>CoinMarketCap</td>
+                    
+                    <td>CoinMarketCap</td>
+                    
+                    <td>6323370</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1609596934557429760/lIbH-TCC_200x200.jpg</td>
+                    
+                    <td>28</td>
+                    
+                    <td>40086</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817342586073526326</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>If you’re looking for a place to trade, sign up to Rollbit using my Partner code
+
+Trade Bitcoin, Ethereum, Solana, Pepe, dogwifhat, or any other crypto they have, up to 100-1,000x leverage
+
+Sign up right now 👇
+</td>
+                    
+                    <td>https://twitter.com/3orovik/status/1817342586073526326</td>
+                    
+                    <td>2024-07-27 23:33:31</td>
+                    
+                    <td>3.21</td>
+                    
+                    <td>twitter::1373786106118963200</td>
+                    
+                    <td>3orovik</td>
+                    
+                    <td>borovik</td>
+                    
+                    <td>196166</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1602013001275432961/fPt7sb1f_200x200.png</td>
+                    
+                    <td>27</td>
+                    
+                    <td>3326</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817197384864092295</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Smoking Chicken Dogwifhat - $SCWIF devs are reportedly behind other rugs such as $BEAST, $ROPE and $BUNNY. This project is very likely to end the same. 
+
+</td>
+                    
+                    <td>https://twitter.com/CryptoRugMunch/status/1817197384864092295</td>
+                    
+                    <td>2024-07-27 13:56:33</td>
+                    
+                    <td>3.12</td>
+                    
+                    <td>twitter::1771377421117169668</td>
+                    
+                    <td>CryptoRugMunch</td>
+                    
+                    <td>Crypto Rug Muncher</td>
+                    
+                    <td>21213</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1775207374329929728/qUcyb_2o_200x200.jpg</td>
+                    
+                    <td>23</td>
+                    
+                    <td>1389</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1816375301502619801</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>As #Bitcoin Appeared on the Las Vegas Sphere Yesterday, Among these 7 #Cryptocurrencies, which one will be next?🔥🚀
+
+1. Ethereum ( $ETH)
+2. Solana ( $SOL)
+3. Dogecoin ( $DOGE)
+4. ShibaInu ( $SHIB)
+5. Dogwifhat ( $WIF)
+6. Pepe ( $PEPE)
+7. Dog go to the moon ( $DOG)</td>
+                    
+                    <td>https://twitter.com/MarketCoinpedia/status/1816375301502619801</td>
+                    
+                    <td>2024-07-25 07:29:53</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1621096802903818241</td>
+                    
+                    <td>MarketCoinpedia</td>
+                    
+                    <td>Coinpedia Markets</td>
+                    
+                    <td>6144</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1629009962595926018/3JFmewmb_200x200.jpg</td>
+                    
+                    <td>20</td>
+                    
+                    <td>1704</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817215674067878168</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Ansem is a well-known crypto personality.
+
+He started in 2017 as a trader sharing his moves on social media.
+
+As his fame grew, so did the controversy.
+
+During the WIF memecoin surge, he launched a Vercel campaign to raise $650,000 to display the meme in Las Vegas
+
+(2/9)</td>
+                    
+                    <td>https://twitter.com/StarPlatinumSOL/status/1817215674067878168</td>
+                    
+                    <td>2024-07-27 15:09:13</td>
+                    
+                    <td>3.03</td>
+                    
+                    <td>twitter::1500166468851412998</td>
+                    
+                    <td>StarPlatinumSOL</td>
+                    
+                    <td>StarPlatinum</td>
+                    
+                    <td>21430</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1717878485434114048/RcnBMevX_200x200.jpg</td>
+                    
+                    <td>20</td>
+                    
+                    <td>1982</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1807439182253420546</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>The Dog has a hat
+The Cat has a bag.
+
+$BAG</td>
+                    
+                    <td>https://twitter.com/wifbag/status/1807439182253420546</td>
+                    
+                    <td>2024-06-30 15:40:56</td>
+                    
+                    <td>3.27</td>
+                    
+                    <td>twitter::1766677944687099904</td>
+                    
+                    <td>wifbag</td>
+                    
+                    <td>catwifbag</td>
+                    
+                    <td>8954</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1766678153320071169/DNBVOmYv_200x200.png</td>
+                    
+                    <td>17</td>
+                    
+                    <td>2836</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818138814524858473</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Dogwifhat (WIF) Poised For Big Growth — Analyst</td>
+                    
+                    <td>https://twitter.com/jingerale5/status/1818138814524858473</td>
+                    
+                    <td>2024-07-30 04:17:27</td>
+                    
+                    <td>3.2</td>
+                    
+                    <td>twitter::1671101950904119298</td>
+                    
+                    <td>jingerale5</td>
+                    
+                    <td>jingerale</td>
+                    
+                    <td>58</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1792966158473478144/z4gVLx6g_200x200.jpg</td>
+                    
+                    <td>19</td>
+                    
+                    <td>21</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1ebv5mi</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>Why BAMBIT is Poised to Join the Billion-Dollar Crypto Club! </td>
+                    
+                    <td>https://reddit.com/1ebv5mi</td>
+                    
+                    <td>2024-07-25 13:40:03</td>
+                    
+                    <td>2.72</td>
+                    
+                    <td>reddit::t2_7px669gj</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>10284</td>
+                    
+                    <td>https://i.redd.it/snoovatar/avatars/8dafc1b1-ad34-42ce-98f6-8f58186dda17-headshot.png</td>
+                    
+                    <td>17</td>
+                    
+                    <td>262</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817953801933914572</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Keep an eye on Beoble, and Dogwifhat – these new projects are set to explode. Which one are you most excited about? 🌟 #CryptoNewcomers</td>
+                    
+                    <td>https://twitter.com/MCryptoParadise/status/1817953801933914572</td>
+                    
+                    <td>2024-07-29 16:02:16</td>
+                    
+                    <td>3.23</td>
+                    
+                    <td>twitter::1761075441576644608</td>
+                    
+                    <td>MCryptoParadise</td>
+                    
+                    <td>MyCryptoParadise.com</td>
+                    
+                    <td>559</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1762096429714001920/fZuxwWMA_200x200.jpg</td>
+                    
+                    <td>18</td>
+                    
+                    <td>22</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1810765879082201261</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>When Talking About Dog 🐶
+Ordinary People 🆚 Crypto People 
+
+Can you relate? 😂
+Choose your favorite dog in the comments!
+#Dogecoin #dogwifhat #Floki #SHIBARMY #BONK</td>
+                    
+                    <td>https://twitter.com/gate_io/status/1810765879082201261</td>
+                    
+                    <td>2024-07-09 20:00:02</td>
+                    
+                    <td>3.13</td>
+                    
+                    <td>twitter::912539725071777792</td>
+                    
+                    <td>gate_io</td>
+                    
+                    <td>Gate.io</td>
+                    
+                    <td>1566907</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1791097066804097025/CIgnj2Ph_200x200.jpg</td>
+                    
+                    <td>20</td>
+                    
+                    <td>18827</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818169683230458182</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>🚀 Is Dogwifhat (WIF) coin the next big thing? Analysts predict a massive 220% surge to $8.36! 📈 Don't miss out on this explosive opportunity! 🔥 
+
+Read more here:
+
+#Crypto #WIFcoin #Dogwifhat #Investing @CryptoScient</td>
+                    
+                    <td>https://twitter.com/coinspotlight01/status/1818169683230458182</td>
+                    
+                    <td>2024-07-30 06:20:07</td>
+                    
+                    <td>3.05</td>
+                    
+                    <td>twitter::1817116431974379520</td>
+                    
+                    <td>coinspotlight01</td>
+                    
+                    <td>Coin Spotlight</td>
+                    
+                    <td>8</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1817117264279146496/ZTWnTQ0P_200x200.jpg</td>
+                    
+                    <td>16</td>
+                    
+                    <td>17</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817398682926334031</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>if you’re more degen than dogwifhat, are you doing it right?</td>
+                    
+                    <td>https://twitter.com/PuffinOnPulse/status/1817398682926334031</td>
+                    
+                    <td>2024-07-28 03:16:26</td>
+                    
+                    <td>3.24</td>
+                    
+                    <td>twitter::1104400504103333888</td>
+                    
+                    <td>PuffinOnPulse</td>
+                    
+                    <td>PUFFIN ON PULSECHAIN</td>
+                    
+                    <td>638</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1810140030511255552/CMpFWnPt_200x200.jpg</td>
+                    
+                    <td>14</td>
+                    
+                    <td>218</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817217229676773607</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Interestingly enough, this isn't the first Smoking Chicken Dogwifhat $SCWIF project. The scamfluencer accounts we monitor pulled a rug pull on a project called Smoking Chicken Dogwifhat $SCWIF yesterday while I was out. This project is now down 95% in the last 24 hours. Is this what the future holds for the new $SCWIF as well?
+
+</td>
+                    
+                    <td>https://twitter.com/CryptoRugMunch/status/1817217229676773607</td>
+                    
+                    <td>2024-07-27 15:15:24</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1771377421117169668</td>
+                    
+                    <td>CryptoRugMunch</td>
+                    
+                    <td>Crypto Rug Muncher</td>
+                    
+                    <td>21144</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1775207374329929728/qUcyb_2o_200x200.jpg</td>
+                    
+                    <td>15</td>
+                    
+                    <td>2027</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818065410312290385</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>All-Time Highs Ahead? Dogwifhat (WIF) Poised For Big Growth — Analyst</td>
+                    
+                    <td>https://twitter.com/CryptoJoseJM/status/1818065410312290385</td>
+                    
+                    <td>2024-07-29 23:25:46</td>
+                    
+                    <td>3.14</td>
+                    
+                    <td>twitter::270618816</td>
+                    
+                    <td>CryptoJoseJM</td>
+                    
+                    <td>Jose JM</td>
+                    
+                    <td>815</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/975738177389580294/88Oi_b84_200x200.jpg</td>
+                    
+                    <td>15</td>
+                    
+                    <td>19</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818077611756515634</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Dogwifhat (WIF) has gained attention lately, even though its value dropped by 5% last week. It did rise 22% over the past month, and analysts are seeing positive signs. The market cap is $2.47 billion, with predictions that it could reach $8.36 by the end of August.</td>
+                    
+                    <td>https://twitter.com/BlockVoyagerAIO/status/1818077611756515634</td>
+                    
+                    <td>2024-07-30 00:14:15</td>
+                    
+                    <td>3.26</td>
+                    
+                    <td>twitter::1709199703051759616</td>
+                    
+                    <td>BlockVoyagerAIO</td>
+                    
+                    <td>BlockVoyager</td>
+                    
+                    <td>663</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1709402757193691136/W6Shx6Zp_200x200.jpg</td>
+                    
+                    <td>14</td>
+                    
+                    <td>19</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818118251856957537</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Dogwifhat (WIF) has seen a recent 5% drop in value but maintained a 22% increase over the past month. With a market cap of $2.47 billion, analysts are optimistic about its growth potential, forecasting it could reach $8.36 by August 28, 2024, if it breaks resistance at $3.30.</td>
+                    
+                    <td>https://twitter.com/BlockVoyagerAIO/status/1818118251856957537</td>
+                    
+                    <td>2024-07-30 02:55:44</td>
+                    
+                    <td>3.25</td>
+                    
+                    <td>twitter::1709199703051759616</td>
+                    
+                    <td>BlockVoyagerAIO</td>
+                    
+                    <td>BlockVoyager</td>
+                    
+                    <td>663</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1709402757193691136/W6Shx6Zp_200x200.jpg</td>
+                    
+                    <td>14</td>
+                    
+                    <td>17</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818197686903861393</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Dogwifhat (WIF) Price Breakout Soon? Trading Volume Surges Amid Bullish Price Prediction 
+Key points:
+
+Dogwifhat (WIF) has shown mixed performance recently, with a 5% drop over the last week but a 22% gain over the past month.
+
+Analysts are predicting potential growth for WIF, …</td>
+                    
+                    <td>https://twitter.com/NotAnotherTip/status/1818197686903861393</td>
+                    
+                    <td>2024-07-30 08:11:23</td>
+                    
+                    <td>3.21</td>
+                    
+                    <td>twitter::1268007167409434624</td>
+                    
+                    <td>NotAnotherTip</td>
+                    
+                    <td>nickletipping.wiki</td>
+                    
+                    <td>1112</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1804465201598631936/I_0jN64n_200x200.jpg</td>
+                    
+                    <td>15</td>
+                    
+                    <td>15</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1ebv5y6</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>Explore BAMBIT: The Cutest Panda in Crypto with Big Dreams!</td>
+                    
+                    <td>https://reddit.com/1ebv5y6</td>
+                    
+                    <td>2024-07-25 13:40:25</td>
+                    
+                    <td>2.83</td>
+                    
+                    <td>reddit::t2_7px669gj</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>10284</td>
+                    
+                    <td>https://i.redd.it/snoovatar/avatars/8dafc1b1-ad34-42ce-98f6-8f58186dda17-headshot.png</td>
+                    
+                    <td>15</td>
+                    
+                    <td>507</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>My2TGjgSJMw</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>HOW TO BUY DOG WIF HAT COIN</td>
+                    
+                    <td>https://youtube.com/watch?v=My2TGjgSJMw</td>
+                    
+                    <td>2023-12-18 19:00:12</td>
+                    
+                    <td>3.1</td>
+                    
+                    <td>youtube::UCHqv8HoXfgaOGNPNgPo5FTg</td>
+                    
+                    <td>CryptoTube</td>
+                    
+                    <td>CryptoTube</td>
+                    
+                    <td>36900</td>
+                    
+                    <td>https://yt3.ggpht.com/vA8xosLcoCrzF7syEHXG_bA09bubWii0sVlR03WH5ekfQlVZ3Pzw3rHTmuEg7fizCUveGJew=s176-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>15</td>
+                    
+                    <td>14760</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1768051987055067291</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Gaming crypto will be a 500 bill to 1 tril market cap in the near future.
+
+We currently only have 1 coin…1 single coin…bigger than dogwifhat.
+
+Disgusting awkwardly early. Up.</td>
+                    
+                    <td>https://twitter.com/ZssBecker/status/1768051987055067291</td>
+                    
+                    <td>2024-03-13 23:10:17</td>
+                    
+                    <td>2.83</td>
+                    
+                    <td>twitter::1243470638477697024</td>
+                    
+                    <td>ZssBecker</td>
+                    
+                    <td>Alex Becker 🍊🏆🥇</td>
+                    
+                    <td>1022614</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1550828422762577922/S3-NhpCA_200x200.jpg</td>
+                    
+                    <td>14</td>
+                    
+                    <td>396576</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817224036067213756</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>10M token has been burnt and we are waiting for pushing this harder. The alpha play Smoking Chicken Fish did well and we could do the same asap.
+
+Proof:
+
+#SCWIF #SmokingChickenDogwifhat $SCWIF</td>
+                    
+                    <td>https://twitter.com/SCWIF_Project/status/1817224036067213756</td>
+                    
+                    <td>2024-07-27 15:42:27</td>
+                    
+                    <td>3.2</td>
+                    
+                    <td>twitter::577476283</td>
+                    
+                    <td>SCWIF_Project</td>
+                    
+                    <td>Smoking Chicken Dogwifhat</td>
+                    
+                    <td>4441</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1817110100806455297/mkC-tM5K_200x200.jpg</td>
+                    
+                    <td>13</td>
+                    
+                    <td>3641</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>in138H3tYHw</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>Buy the DogWifHat crash? ☢ WIF Crypto Token Analysis</td>
+                    
+                    <td>https://youtube.com/watch?v=in138H3tYHw</td>
+                    
+                    <td>2024-07-04 09:53:15</td>
+                    
+                    <td>3.33</td>
+                    
+                    <td>youtube::UCfQaLLoJYaxg9ZNJVHCR9Lg</td>
+                    
+                    <td>BitcoinStrategy</td>
+                    
+                    <td>Gerhard - Bitcoin Strategy</td>
+                    
+                    <td>82500</td>
+                    
+                    <td>https://yt3.ggpht.com/qT8MzGRW1rkqeH7h-_zSf2zVxQ3v5WWQHi_SMCTbpJsvnW7Bv2Dygvf8RLUptyovmo68oRdjQvQ=s88-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>13</td>
+                    
+                    <td>3142</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1817850928713842876</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Dogwifhat
+
+Catwif___
+
+The $BAG stays on</td>
+                    
+                    <td>https://twitter.com/0xGazing/status/1817850928713842876</td>
+                    
+                    <td>2024-07-29 09:13:30</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1780152987610189824</td>
+                    
+                    <td>0xGazing</td>
+                    
+                    <td>Gazing</td>
+                    
+                    <td>75</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1781240766549147648/gnGgVSzz_200x200.jpg</td>
+                    
+                    <td>11</td>
+                    
+                    <td>33</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1ebv8xj</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>Explore BAMBIT: The Cutest Panda in Crypto with Big Dreams!</td>
+                    
+                    <td>https://reddit.com/1ebv8xj</td>
+                    
+                    <td>2024-07-25 13:44:08</td>
+                    
+                    <td>2.83</td>
+                    
+                    <td>reddit::t2_7px669gj</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>10284</td>
+                    
+                    <td>https://i.redd.it/snoovatar/avatars/8dafc1b1-ad34-42ce-98f6-8f58186dda17-headshot.png</td>
+                    
+                    <td>13</td>
+                    
+                    <td>150</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1816946300199534940</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>DogWifHat $wif went to 5B marketcap.
+
+According to Google, MAGA hat is the most popular hat in America. 🇺🇸
+
+I'm predicting a minimum of 3 - 5 Billion marketcap for Trump's Hat. $MAGA
+
+</td>
+                    
+                    <td>https://twitter.com/ShibaInuHodler/status/1816946300199534940</td>
+                    
+                    <td>2024-07-26 21:18:49</td>
+                    
+                    <td>3.16</td>
+                    
+                    <td>twitter::1411587179986489346</td>
+                    
+                    <td>ShibaInuHodler</td>
+                    
+                    <td>SHIB HODLER</td>
+                    
+                    <td>438731</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1681968613828206592/kmmL2nv0_200x200.jpg</td>
+                    
+                    <td>12</td>
+                    
+                    <td>3427</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1748286426746335622</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$WIF Dogwifhat</td>
+                    
+                    <td>https://twitter.com/Ushinat0r/status/1748286426746335622</td>
+                    
+                    <td>2024-01-19 10:09:00</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1349155908996136960</td>
+                    
+                    <td>Ushinat0r</td>
+                    
+                    <td>ushinator</td>
+                    
+                    <td>876</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1599093465677434881/4OzdQryt_200x200.jpg</td>
+                    
+                    <td>12</td>
+                    
+                    <td>47</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1e8s26t</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>What is this coin?</td>
+                    
+                    <td>https://reddit.com/1e8s26t</td>
+                    
+                    <td>2024-07-21 17:50:13</td>
+                    
+                    <td>3.18</td>
+                    
+                    <td>reddit::t2_jxbeg0f2k</td>
+                    
+                    <td>RepublicLife6675</td>
+                    
+                    <td>RepublicLife6675</td>
+                    
+                    <td>338</td>
+                    
+                    <td>https://i.redd.it/snoovatar/avatars/568e762b-6714-429c-b2d9-8061a14e8865-headshot.png</td>
+                    
+                    <td>12</td>
+                    
+                    <td>80</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1818083785474228585</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>@cobie @JSeyff hmm is dogwifhat szn back again? jk stick to btc</td>
+                    
+                    <td>https://twitter.com/MrWorldwide_Ams/status/1818083785474228585</td>
+                    
+                    <td>2024-07-30 00:38:47</td>
+                    
+                    <td>3.13</td>
+                    
+                    <td>twitter::1654649357864411136</td>
+                    
+                    <td>MrWorldwide_Ams</td>
+                    
+                    <td>J</td>
+                    
+                    <td>248</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1777965177473769472/d1Q4oVC8_200x200.jpg</td>
+                    
+                    <td>12</td>
+                    
+                    <td>12</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1755845603081523466</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>@GraffirapNFT @eth_dogwifhat Just wait til they see what @issa and the community are working wif. Full send mode incoming. Meme of memes right here. Unstoppable! WE are going to a billi wif or wif out you!!! LFG! ❤️🐕 #dogwifhat #ETH</td>
+                    
+                    <td>https://twitter.com/daveypfunk801/status/1755845603081523466</td>
+                    
+                    <td>2024-02-09 06:46:28</td>
+                    
+                    <td>3.18</td>
+                    
+                    <td>twitter::1447729026638831619</td>
+                    
+                    <td>daveypfunk801</td>
+                    
+                    <td>Daveypfunk801</td>
+                    
+                    <td>5178</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1776855370314678272/uDj_V-1W_200x200.jpg</td>
+                    
+                    <td>12</td>
+                    
+                    <td>118</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1808692340703326675</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>My fav play on $SOL is $CAN 
+
+Loaded more 
+
+$CAN IS REAL $WIF (DOGWIFHAT) BROTHER! 
+
+There is potential brother
+
+FF4dN8Qy8NNF88HRgMA3TkbRVZ8PTXWXZCZJb59X3Sbg</td>
+                    
+                    <td>https://twitter.com/0x7ama/status/1808692340703326675</td>
+                    
+                    <td>2024-07-04 02:40:32</td>
+                    
+                    <td>3.14</td>
+                    
+                    <td>twitter::3539758514</td>
+                    
+                    <td>0x7ama</td>
+                    
+                    <td>7ama</td>
+                    
+                    <td>6473</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1816953188563423232/5ZdLilRL_200x200.jpg</td>
+                    
+                    <td>13</td>
+                    
+                    <td>527</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1813577543267807425</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$WIF
+
+🧑‍🍳🌊
+
+#wif #wifusdt #dogwifhat</td>
+                    
+                    <td>https://twitter.com/pauloricci8kk/status/1813577543267807425</td>
+                    
+                    <td>2024-07-17 14:12:35</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::1649840755966345216</td>
+                    
+                    <td>pauloricci8kk</td>
+                    
+                    <td>Paulo Ricci</td>
+                    
+                    <td>2136</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1709600237122170880/tBJlWEtA_200x200.jpg</td>
+                    
+                    <td>11</td>
+                    
+                    <td>2714</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>KEU_hzmwsXw</td>
+                    
+                    <td>youtube-video</td>
+                    
+                    <td>WIF Will OVERTAKE DOGE In 85 Days! [Best Meme Coins To Buy Now]</td>
+                    
+                    <td>https://youtube.com/watch?v=KEU_hzmwsXw</td>
+                    
+                    <td>2024-03-14 12:47:39</td>
+                    
+                    <td>3.17</td>
+                    
+                    <td>youtube::UCVVX-7tHff75fRAEEEnZiAQ</td>
+                    
+                    <td>milesdeutscher1357</td>
+                    
+                    <td>Miles Deutscher</td>
+                    
+                    <td>185</td>
+                    
+                    <td>https://yt3.ggpht.com/_Zk087z9mtATIc2C0ihc7MV7CGyTKOs7Cz8FkP-b1E97_-rqfUethMHXqTiaB8Ru7H_fRSMxjiQ=s176-c-k-c0x00ffffff-no-rj</td>
+                    
+                    <td>11</td>
+                    
+                    <td>53168</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1755526079614484808</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$dogwifhat is listed on #CoinW exchange</td>
+                    
+                    <td>https://twitter.com/kirzstin/status/1755526079614484808</td>
+                    
+                    <td>2024-02-08 09:36:48</td>
+                    
+                    <td>3.11</td>
+                    
+                    <td>twitter::1481064308490780677</td>
+                    
+                    <td>kirzstin</td>
+                    
+                    <td>Kirstin 🍭</td>
+                    
+                    <td>9336</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1782911161647939584/Peu6ZdvG_200x200.jpg</td>
+                    
+                    <td>14</td>
+                    
+                    <td>117</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1810188752393830704</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>"Dogwifhat is a meme of a dog wearing a hat, made funnier by its confused or goofy expression."
+
+YES, our doggo is so much better than all of the other memes out there!
+
+$WIF</td>
+                    
+                    <td>https://twitter.com/DuppiesDAO/status/1810188752393830704</td>
+                    
+                    <td>2024-07-08 05:46:44</td>
+                    
+                    <td>3.15</td>
+                    
+                    <td>twitter::1527755422026932225</td>
+                    
+                    <td>DuppiesDAO</td>
+                    
+                    <td>travis.sol 👑</td>
+                    
+                    <td>1093</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1813745607011356672/IHJPHqNB_200x200.jpg</td>
+                    
+                    <td>10</td>
+                    
+                    <td>161</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1ebv894</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>Discover BAMBIT: The Rising Star of Solana's Memecoin Scene! </td>
+                    
+                    <td>https://reddit.com/1ebv894</td>
+                    
+                    <td>2024-07-25 13:43:17</td>
+                    
+                    <td>2.77</td>
+                    
+                    <td>reddit::t2_7px669gj</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>kadobaba66tr</td>
+                    
+                    <td>10284</td>
+                    
+                    <td>https://i.redd.it/snoovatar/avatars/8dafc1b1-ad34-42ce-98f6-8f58186dda17-headshot.png</td>
+                    
+                    <td>12</td>
+                    
+                    <td>140</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>t3_1ebvp6j</td>
+                    
+                    <td>reddit-post</td>
+                    
+                    <td>Discover BAMBIT: The Rising Star of Solana's Memecoin Scene!</td>
+                    
+                    <td>https://reddit.com/1ebvp6j</td>
+                    
+                    <td>2024-07-25 14:03:32</td>
+                    
+                    <td>2.77</td>
+                    
+                    <td>reddit::t2_v7v9gbab</td>
+                    
+                    <td>Djamur11</td>
+                    
+                    <td>Djamur11</td>
+                    
+                    <td>6933</td>
+                    
+                    <td>https://styles.redditmedia.com/t5_8ztgo6/styles/profileIcon_snoo0a2c586a-af19-45d6-a189-1e12c2e50ff3-headshot.png?width=256&height=256&crop=256:256,smart&s=f14bc527151ca40d831fa2353d1cac0fa3989c66</td>
+                    
+                    <td>11</td>
+                    
+                    <td>5182</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1816881340907946396</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$SCWIF IS READY FOR NEXT LEG !
+
+We are almost at 1000 Holders now ! 
+
+Will 5.5 Million $SCWIF worth $1000 change your life ?</td>
+                    
+                    <td>https://twitter.com/scwifsol/status/1816881340907946396</td>
+                    
+                    <td>2024-07-26 17:00:42</td>
+                    
+                    <td>3.13</td>
+                    
+                    <td>twitter::1793476230450216960</td>
+                    
+                    <td>scwifsol</td>
+                    
+                    <td>Smoking Chicken Dogwifhat</td>
+                    
+                    <td>10187</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1816843633473032192/8IcWf4oB_200x200.jpg</td>
+                    
+                    <td>11</td>
+                    
+                    <td>4505</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1754506578055790705</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$dogwifhat is listed on #CoinW exchange</td>
+                    
+                    <td>https://twitter.com/oidelate/status/1754506578055790705</td>
+                    
+                    <td>2024-02-05 14:05:40</td>
+                    
+                    <td>3.11</td>
+                    
+                    <td>twitter::847067912296787969</td>
+                    
+                    <td>oidelate</td>
+                    
+                    <td>️️️️️️️️ ️️️️ ️️️️️️️️ ️️️🦙 : o.</td>
+                    
+                    <td>1948</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1796834737505644544/fXlrFIQr_200x200.jpg</td>
+                    
+                    <td>10</td>
+                    
+                    <td>10</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1754771305906499628</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>$dogwifhat is listed on #CoinW exchange</td>
+                    
+                    <td>https://twitter.com/y1lefulv/status/1754771305906499628</td>
+                    
+                    <td>2024-02-06 07:37:36</td>
+                    
+                    <td>3.11</td>
+                    
+                    <td>twitter::1572417612252086272</td>
+                    
+                    <td>y1lefulv</td>
+                    
+                    <td>ᴢᴀʏᴇ</td>
+                    
+                    <td>6805</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1817741417340624896/488GprgZ_200x200.jpg</td>
+                    
+                    <td>10</td>
+                    
+                    <td>10</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1768073333537399141</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>💥FACTS JUST IN💥
+The Solana meme coin dogwifhat will be featured on the Las Vegas Sphere after a successful fundraising campaign.
+The WIF token's price has reached a new all-time high, making dogwifhat the largest meme coin on Solana...👀💥
+#WIF #memecoins #Solana #SOL #Crypto</td>
+                    
+                    <td>https://twitter.com/AllFactsCrypto/status/1768073333537399141</td>
+                    
+                    <td>2024-03-14 00:35:06</td>
+                    
+                    <td>3.22</td>
+                    
+                    <td>twitter::1629822280111992833</td>
+                    
+                    <td>AllFactsCrypto</td>
+                    
+                    <td>All Facts Crypto</td>
+                    
+                    <td>37972</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1639949024420859904/WSnGTPw5_200x200.jpg</td>
+                    
+                    <td>10</td>
+                    
+                    <td>2247</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1805586755091153047</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>🗞️ Crypto News
+
+Dogwifhat $WIF, a memecoin on the Solana blockchain, has fallen out of the top 50 cryptocurrencies by market capitalization after suffering a significant 38% price drop over the past week.
+
+🔗
+
+#CryptoNews</td>
+                    
+                    <td>https://twitter.com/CoinMarketCap/status/1805586755091153047</td>
+                    
+                    <td>2024-06-25 13:00:03</td>
+                    
+                    <td>3.0</td>
+                    
+                    <td>twitter::2260491445</td>
+                    
+                    <td>CoinMarketCap</td>
+                    
+                    <td>CoinMarketCap</td>
+                    
+                    <td>6322009</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1609596934557429760/lIbH-TCC_200x200.jpg</td>
+                    
+                    <td>10</td>
+                    
+                    <td>28808</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1800562294231093690</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>We agree! It will be a DePIN summer.</td>
+                    
+                    <td>https://twitter.com/iotex_community/status/1800562294231093690</td>
+                    
+                    <td>2024-06-11 16:14:38</td>
+                    
+                    <td>3.05</td>
+                    
+                    <td>twitter::1382394793418842114</td>
+                    
+                    <td>iotex_community</td>
+                    
+                    <td>IoTeX Ecosystem Updates 🤖</td>
+                    
+                    <td>59113</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1742640007641432064/cKyT-YrG_200x200.jpg</td>
+                    
+                    <td>10</td>
+                    
+                    <td>8316</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1805012529006985435</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>Beluga @BelugaTokenETH  the biggest meme cat in the world. Same meme as Dogwifhat.
+
+Launching Today on Ethereum 6pm UTC
+
+Website:
+Telegram:</td>
+                    
+                    <td>https://twitter.com/ShibInfo/status/1805012529006985435</td>
+                    
+                    <td>2024-06-23 22:58:17</td>
+                    
+                    <td>3.08</td>
+                    
+                    <td>twitter::201368350</td>
+                    
+                    <td>ShibInfo</td>
+                    
+                    <td>SHIB WOOF!</td>
+                    
+                    <td>571525</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1712877573875564544/75paRp0y_200x200.jpg</td>
+                    
+                    <td>8</td>
+                    
+                    <td>6418</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1815400270869692905</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>10/ Elon Musk and $WIF
+
+Just one month ago, @elonmusk commented in a livestream that he had hear of the Solana meme coin Dogwifhat.
+
+From this small clip we can obtain two conclusions:
+1. He knows the meme
+2. He likes the meme
+
+One simple tweet from the wealthiest man in the world could teletransport WIF price from 2 billion to 20 billion, (which is exactly what happened to $DOGE in 2021 by the way).
+
+Source:
+</td>
+                    
+                    <td>https://twitter.com/0xBulliever/status/1815400270869692905</td>
+                    
+                    <td>2024-07-22 14:55:27</td>
+                    
+                    <td>3.07</td>
+                    
+                    <td>twitter::1796864410134233089</td>
+                    
+                    <td>0xBulliever</td>
+                    
+                    <td>Jose Manuel</td>
+                    
+                    <td>4522</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1800247358258614272/iZYr4Bdd_200x200.jpg</td>
+                    
+                    <td>7</td>
+                    
+                    <td>2222</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>1774123765800095995</td>
+                    
+                    <td>tweet</td>
+                    
+                    <td>#TokenFI 💹</td>
+                    
+                    <td>https://twitter.com/Cryptohodler93/status/1774123765800095995</td>
+                    
+                    <td>2024-03-30 17:17:22</td>
+                    
+                    <td>3.19</td>
+                    
+                    <td>twitter::1436250127547740160</td>
+                    
+                    <td>Cryptohodler93</td>
+                    
+                    <td>Abrakadabra</td>
+                    
+                    <td>313</td>
+                    
+                    <td>https://pbs.twimg.com/profile_images/1813863572058898432/X4wXEwXI_200x200.jpg</td>
+                    
+                    <td>12</td>
+                    
+                    <td>100</td>
+                    
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <h2>Sentiment Distribution for Top Posts</h2>
+        <canvas id="sentimentDistributionChart"></canvas>
+
+        <h2>Top Posts by Interactions</h2>
+        <canvas id="topPostsByInteractionsChart"></canvas>
+
+        <script>
+            $(document).ready(function() {
+                $('#topPostsTable').DataTable();
+
+                var ctx2 = document.getElementById('sentimentDistributionChart').getContext('2d');
+                new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: [3.0, 3.24, 3.2, 3.0, 3.0, 3.19, 3.03, 3.4, 3.31, 3.16, 3.0, 3.0, 3.26, 3.0, 3.04, 2.33, 2.72, 2.83, 3.0, 3.0, 3.38, 3.0, 3.0, 3.25, 2.69, 3.18, 3.17, 2.85, 3.22, 3.0, 3.24, 2.82, 3.0, 3.11, 3.33, 3.27, 3.13, 3.08, 3.0, 3.07, 2.86, 3.0, 3.08, 3.0, 3.0, 3.0, 2.65, 3.23, 3.0, 2.8, 3.17, 3.14, 3.16, 3.16, 3.14, 3.51, 3.21, 3.12, 3.0, 3.03, 3.27, 3.2, 2.72, 3.23, 3.13, 3.05, 3.24, 3.0, 3.14, 3.26, 3.25, 3.21, 2.83, 3.1, 2.83, 3.2, 3.33, 3.0, 2.83, 3.16, 3.0, 3.18, 3.13, 3.18, 3.14, 3.0, 3.17, 3.11, 3.15, 2.77, 2.77, 3.13, 3.11, 3.11, 3.22, 3.0, 3.05, 3.08, 3.07, 3.19],
+                        datasets: [{
+                            label: 'Sentiment Score',
+                            data: [3.0, 3.24, 3.2, 3.0, 3.0, 3.19, 3.03, 3.4, 3.31, 3.16, 3.0, 3.0, 3.26, 3.0, 3.04, 2.33, 2.72, 2.83, 3.0, 3.0, 3.38, 3.0, 3.0, 3.25, 2.69, 3.18, 3.17, 2.85, 3.22, 3.0, 3.24, 2.82, 3.0, 3.11, 3.33, 3.27, 3.13, 3.08, 3.0, 3.07, 2.86, 3.0, 3.08, 3.0, 3.0, 3.0, 2.65, 3.23, 3.0, 2.8, 3.17, 3.14, 3.16, 3.16, 3.14, 3.51, 3.21, 3.12, 3.0, 3.03, 3.27, 3.2, 2.72, 3.23, 3.13, 3.05, 3.24, 3.0, 3.14, 3.26, 3.25, 3.21, 2.83, 3.1, 2.83, 3.2, 3.33, 3.0, 2.83, 3.16, 3.0, 3.18, 3.13, 3.18, 3.14, 3.0, 3.17, 3.11, 3.15, 2.77, 2.77, 3.13, 3.11, 3.11, 3.22, 3.0, 3.05, 3.08, 3.07, 3.19],
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: { 
+                                title: { display: true, text: 'Sentiment Score' }
+                            },
+                            y: { 
+                                title: { display: true, text: 'Count' }
+                            }
+                        }
+                    }
+                });
+
+                var ctx3 = document.getElementById('topPostsByInteractionsChart').getContext('2d');
+                new Chart(ctx3, {
+                    type: 'bar',
+                    data: {
+                        labels: ['$WIF \n\nLTF \n\n#wif #wifusdt #dogwifhat', 'The thesis is simple \n$BAG', 'Top 3 #memecoins for the #bullmarket #altcoins #memes ', 'wif to $100', 'Wif is going to flip Bonk as it becomes solanas second largest memecoin #wif #dogwifhat #dogwithhat #solana #memecoin #meme ', 'The Dog has a hat, the cat has a bag:\n\nWhat is catwifbag?\n\ncatwifbag is a meme originally inspired by a post from Ma Babez @achichuchu \nShe is the owner of the dogwifhat dog \'Achi\', catwifbag cat "Chuchu" and the original creator of the viral dogwifhat meme.\n\n$BAG 👇', 'The easiest 100x in your life. $bag and $Wif live under the same roof and have the same irl owner. 4 months of accumulation. It reminds me of $bonk chart and we know what happened... It’s literally no brainer. 22x till ath and 1000x to reach dogwifhat market cap. The most bullish chart on $sol', 'Kind of how the Dogwifhat community spends pennies and continues to achieve so much compared to VC backed marketing budgets where they see a price list and just pay it. \n\nStudy $WIF', "...that's a LOT of $WIF \nellio dogwifhat 🧢", 'Literally nothing healthier for the industry than \n\n1) getting GOX behind us\n2) sending Grayscale to literal zero\n3) stopping the ETF’s with ETH \n\nSOL boys in disbelief\n\nBut trust me you don’t want a SOL ETF\n\nIf we get a SOL one weel have a dogwifhat ETF too\n\nYou think that will help with liquidity?\n\nYou think your coins will ever pump again?\n\nThis industry will get sent back to the stone age as our only source of new money is diluted across 1,000x garbage tier products\n\nAnd people wonder why I hate SOL lol\n\nYou idiots are calling for the end of everything just to pump your retardmemecoin#4000\n\nNo.\n\nBTC and ETH only.\n\nHealthy industry with the two big dogs at the top and steady institutional capital.', 'bink! dogwifhat on sphere fully funded ✅', 'Animation for giga  #crypto #coin #pepe #giga #dogwifhat ', '🟢 WIF USDT DOGWIFHAT Live Trading Educational chart', "iight bros, it's time, we're putting dogwifhat on the vegas sphere \U0001fae8", 'Solana Memecoins To Buy: $HINU, $BONK, $WIF, And $BOME\n\nThe Solana blockchain boasts several prime memecoins, but four projects stand out for their excellent profit potential: Husky Inu ($HINU), Bonk ($BONK), Dogwifhat ($WIF), and BOOK OF MEME ($BOME).\xa0\n\n', 'if this nigga saylor can say bitcoin is going to one quadrillion i sure as hell can say dogwifhat going to $100B', 'Why BAMBIT is Poised to Join the Billion-Dollar Crypto Club! 2022 x Potential ', 'Explore BAMBIT: The Cutest Panda in Crypto with Big Dreams!', 'All Pump, No Dump. \nJoin Club $INU Today.\n\n#Shiba #Doge #DogWifHat #BabyDoge #Floki', 'catwifhat and dogwifhat getting gnarly 🌊', '$WIF fans here are some free phone backgrounds\n\n#dogwifhat #wif #wallpaper #minecraft', 'dogwifhat 🤝 Diamante\n\n$500 ➡️ $85,161.60', '$WIF', 'Dog with Hat lost his hat. 🐶🎩 #animation #meme #dogwifhat #cartoon #crypto #duck', 'How it goes. ', 'Come join the $INU Army and together we will form the strongest pack on #ETH \n\n#Inu #Floki #Doge #Shiba #DogWifHat', 'Can you imagine years ago, @blknoiz06 was like this is the first dogwifhat, instead of the one the community chose\n\nThe fall off will be researched to unprecedented levels', "so it's a dog, but wif, a hat \n\nthese new crypto memes spontaneously emerge as viral symbols prevalent in digital culture, a rallying cry for those internet natives disllusioned with the typical 9-to-5 grind - dogwifhat may quite literally be the first dog coin to ever hit $1.00", '3. High Cap\n\n● @dogwifcoin - $WIF\n\nPopular meme Dogwifhat vibes wif frens onchain\n\n$WIF is a popular memecoin on Solana. While it lacks any known utility, it boasts a strong community.', 'dogwifhat > dog without a hat', 'CAT IN A DOGS WORLD Price Prediction - Can $MEW STILL 10X Your Money?!', 'Whale Deposits WIF Amidst 15% Market Fall', '@CoinbaseAssets @coinbase @CoinbaseExch Is Stader another name for DogWifHat?', 'Weekly Alpha Trades\n\n1/10) #Dogwifhat rallied +9% last 1w. As reported by Forbes, Dogwifhat was the best-performing cryptocurrency in the first half of 2024, boasting a 1300% increase since the start of the year. The meme coin is a new favorite among investors, beating out other popular large-cap meme coins, #Dogecoin(+38%) and #ShibaInu (+60%). Mkt cap $2.5 bn.', '🔴Live DogWifHat(WIF) 5 Minute Buy And Sell Signals-Trading Signals-Scalping Strategy-Diamond Algo-', '📰 Very good news for Pepe, Book of Meme, and Dogwifhat tokens\n\n\n\n$PEPE #pepe #solana #world', 'CATDOG - a new 100x Crypto opportunity (SERIOUSLY)', '📈 Over the past 2 weeks, $WIF surged 39% to $2.56, hitting a $2.5B market cap!\n\n📊 WIF is consolidating between the 0.618 and 0.786 Fibonacci levels, showing bullish signs with moving average support.\n\n#dogwifhat #Solana #Crypto', 'this will age like a fine bordeaux shiraz \ndogwifhat 🧢 \n$WIF', 'We all know the original Doge meme was a huge hit—totally organic, not forced. That’s real meme magic. Now, there’s this new coin, $Neiro, but it’s all hype. It doesn’t have what made $Doge special.\n\nAnd that’s exactly what we have $wif Dogwifhat. It’s not just another coin, it’s a movement.\n\n#Dogwifhat is the true successor. It’s not about lineage; it’s about that authentic, viral charm. Achi, our Dogwifhat star, wasn’t made to be a meme, he just became one because he’s got that special something.\n\nThe king is dead, long live the King.', 'Bitcoin dominance highest weekly close in years. \n\nCryptotards everywhere realizing all they had to do is hold #bitcoin instead of worrying about when to pivot out of CumRocket to Dogwifhat.', 'Dogwifhat (WIF) Price Breakout Soon? Trading Volume Surges Amid Bullish Price Prediction\n\n', 'How I Find 100x Memecoins Before the Hype', '@elliotrades dogwifhat 🧢 \n$WIF', 'Dogwifhat Price Prediction: Should You Consider Jumping Ship to 5thScape (5SCAPE)?\n\n', 'Dogwifhat ( $WIF) Price Breakout Soon? Trading Volume Surges Amid Bullish Price Prediction\n', "Will #dogwifhat crash to 0 in August?\n📉 While a complete crash seems unlikely, investors tread with caution as $WIF's recent dip signals potential vulnerabilities. Is it an investment opportunity or a risk?\nDecide for yourself: \n", 'JUST IN: Dogwifhat (WIF) Trading Volume Spikes Amid Bullish Predictions\n\nDogwifhat (WIF) sees a 22% gain over the past month and analysts predict it could reach $3.3 or higher. With key support levels reclaimed, bullish indicators are emerging.', 'Life-changing Crypto Projects: Evaluating Dogwifhat, Worldcoin, and Viral DeFi Platform DTX Exchange\n\n', 'Solana Meme Showdown: Bonk (BONK) vs Dogwifhat (WIF). Can Either Derail The Rollblock (RBLK) Locomotive: Destination 200x...', 'This dog is worth $3 Billion! #shibainu #doge #dogwifhat #elon ', 'All-Time Highs Ahead? Dogwifhat (WIF) Poised For Big Growth — Analyst\n\n', '4M token has been burnt and we are waiting for pushing this harder. The alpha play Smoking Chicken Fish did well and we could do the same asap.\n\nBurn more and everything will go up is real\n\nProof:\n\n#SCWIF #SmokingChickenDogwifhat $SCWIF', 'What is $BAG?  \n\ncatwifbag is a meme originally posted on Instagram by Ma Babezz, the same person who originally posted the dogwifhat meme, she is the owner of the dogwifhat dog and catwifbag cat.\n\nThe Dog has a hat\n\nThe Cat has a bag.', '@fred7130 Only a matter of time before $WIF-halla', '#CMCNews: Dogwifhat Climbs Back into Top 50 Cryptocurrencies, Gaining 50% This Week\n\n\n#Solana-based #memecoin #Dogwifhat $WIF has made a significant comeback, re-entering the top 50 #cryptocurrencies following a +49.8% increase over the past week...', 'If you’re looking for a place to trade, sign up to Rollbit using my Partner code\n\nTrade Bitcoin, Ethereum, Solana, Pepe, dogwifhat, or any other crypto they have, up to 100-1,000x leverage\n\nSign up right now 👇\n', 'Smoking Chicken Dogwifhat - $SCWIF devs are reportedly behind other rugs such as $BEAST, $ROPE and $BUNNY. This project is very likely to end the same. \n\n', 'As #Bitcoin Appeared on the Las Vegas Sphere Yesterday, Among these 7 #Cryptocurrencies, which one will be next?🔥🚀\n\n1. Ethereum ( $ETH)\n2. Solana ( $SOL)\n3. Dogecoin ( $DOGE)\n4. ShibaInu ( $SHIB)\n5. Dogwifhat ( $WIF)\n6. Pepe ( $PEPE)\n7. Dog go to the moon ( $DOG)', 'Ansem is a well-known crypto personality.\n\nHe started in 2017 as a trader sharing his moves on social media.\n\nAs his fame grew, so did the controversy.\n\nDuring the WIF memecoin surge, he launched a Vercel campaign to raise $650,000 to display the meme in Las Vegas\n\n(2/9)', 'The Dog has a hat\nThe Cat has a bag.\n\n$BAG', 'Dogwifhat (WIF) Poised For Big Growth — Analyst', 'Why BAMBIT is Poised to Join the Billion-Dollar Crypto Club! ', 'Keep an eye on Beoble, and Dogwifhat – these new projects are set to explode. Which one are you most excited about? 🌟 #CryptoNewcomers', 'When Talking About Dog 🐶\nOrdinary People 🆚 Crypto People \n\nCan you relate? 😂\nChoose your favorite dog in the comments!\n#Dogecoin #dogwifhat #Floki #SHIBARMY #BONK', "🚀 Is Dogwifhat (WIF) coin the next big thing? Analysts predict a massive 220% surge to $8.36! 📈 Don't miss out on this explosive opportunity! 🔥 \n\nRead more here:\n\n#Crypto #WIFcoin #Dogwifhat #Investing @CryptoScient", 'if you’re more degen than dogwifhat, are you doing it right?', "Interestingly enough, this isn't the first Smoking Chicken Dogwifhat $SCWIF project. The scamfluencer accounts we monitor pulled a rug pull on a project called Smoking Chicken Dogwifhat $SCWIF yesterday while I was out. This project is now down 95% in the last 24 hours. Is this what the future holds for the new $SCWIF as well?\n\n", 'All-Time Highs Ahead? Dogwifhat (WIF) Poised For Big Growth — Analyst', 'Dogwifhat (WIF) has gained attention lately, even though its value dropped by 5% last week. It did rise 22% over the past month, and analysts are seeing positive signs. The market cap is $2.47 billion, with predictions that it could reach $8.36 by the end of August.', 'Dogwifhat (WIF) has seen a recent 5% drop in value but maintained a 22% increase over the past month. With a market cap of $2.47 billion, analysts are optimistic about its growth potential, forecasting it could reach $8.36 by August 28, 2024, if it breaks resistance at $3.30.', 'Dogwifhat (WIF) Price Breakout Soon? Trading Volume Surges Amid Bullish Price Prediction \nKey points:\n\nDogwifhat (WIF) has shown mixed performance recently, with a 5% drop over the last week but a 22% gain over the past month.\n\nAnalysts are predicting potential growth for WIF, …', 'Explore BAMBIT: The Cutest Panda in Crypto with Big Dreams!', 'HOW TO BUY DOG WIF HAT COIN', 'Gaming crypto will be a 500 bill to 1 tril market cap in the near future.\n\nWe currently only have 1 coin…1 single coin…bigger than dogwifhat.\n\nDisgusting awkwardly early. Up.', '10M token has been burnt and we are waiting for pushing this harder. The alpha play Smoking Chicken Fish did well and we could do the same asap.\n\nProof:\n\n#SCWIF #SmokingChickenDogwifhat $SCWIF', 'Buy the DogWifHat crash? ☢ WIF Crypto Token Analysis', 'Dogwifhat\n\nCatwif___\n\nThe $BAG stays on', 'Explore BAMBIT: The Cutest Panda in Crypto with Big Dreams!', "DogWifHat $wif went to 5B marketcap.\n\nAccording to Google, MAGA hat is the most popular hat in America. 🇺🇸\n\nI'm predicting a minimum of 3 - 5 Billion marketcap for Trump's Hat. $MAGA\n\n", '$WIF Dogwifhat', 'What is this coin?', '@cobie @JSeyff hmm is dogwifhat szn back again? jk stick to btc', '@GraffirapNFT @eth_dogwifhat Just wait til they see what @issa and the community are working wif. Full send mode incoming. Meme of memes right here. Unstoppable! WE are going to a billi wif or wif out you!!! LFG! ❤️🐕 #dogwifhat #ETH', 'My fav play on $SOL is $CAN \n\nLoaded more \n\n$CAN IS REAL $WIF (DOGWIFHAT) BROTHER! \n\nThere is potential brother\n\nFF4dN8Qy8NNF88HRgMA3TkbRVZ8PTXWXZCZJb59X3Sbg', '$WIF\n\n🧑\u200d🍳🌊\n\n#wif #wifusdt #dogwifhat', 'WIF Will OVERTAKE DOGE In 85 Days! [Best Meme Coins To Buy Now]', '$dogwifhat is listed on #CoinW exchange', '"Dogwifhat is a meme of a dog wearing a hat, made funnier by its confused or goofy expression."\n\nYES, our doggo is so much better than all of the other memes out there!\n\n$WIF', "Discover BAMBIT: The Rising Star of Solana's Memecoin Scene! ", "Discover BAMBIT: The Rising Star of Solana's Memecoin Scene!", '$SCWIF IS READY FOR NEXT LEG !\n\nWe are almost at 1000 Holders now ! \n\nWill 5.5 Million $SCWIF worth $1000 change your life ?', '$dogwifhat is listed on #CoinW exchange', '$dogwifhat is listed on #CoinW exchange', "💥FACTS JUST IN💥\nThe Solana meme coin dogwifhat will be featured on the Las Vegas Sphere after a successful fundraising campaign.\nThe WIF token's price has reached a new all-time high, making dogwifhat the largest meme coin on Solana...👀💥\n#WIF #memecoins #Solana #SOL #Crypto", '🗞️ Crypto News\n\nDogwifhat $WIF, a memecoin on the Solana blockchain, has fallen out of the top 50 cryptocurrencies by market capitalization after suffering a significant 38% price drop over the past week.\n\n🔗\n\n#CryptoNews', 'We agree! It will be a DePIN summer.', 'Beluga @BelugaTokenETH  the biggest meme cat in the world. Same meme as Dogwifhat.\n\nLaunching Today on Ethereum 6pm UTC\n\nWebsite:\nTelegram:', '10/ Elon Musk and $WIF\n\nJust one month ago, @elonmusk commented in a livestream that he had hear of the Solana meme coin Dogwifhat.\n\nFrom this small clip we can obtain two conclusions:\n1. He knows the meme\n2. He likes the meme\n\nOne simple tweet from the wealthiest man in the world could teletransport WIF price from 2 billion to 20 billion, (which is exactly what happened to $DOGE in 2021 by the way).\n\nSource:\n', '#TokenFI 💹'],
+                        datasets: [{
+                            label: 'Interactions in 24h',
+                            data: [1032, 1355, 955, 1272, 656, 1579, 414, 756, 732, 596, 153, 72, 48, 205, 5563, 219, 14, 10, 559, 152, 88, 37, 25, 11, 4, 634, 358, 187, 114, 43, 8, 2, 1255, 745, 186, 124, 108, 84, 83, 77, 74, 67, 64, 58, 57, 56, 44, 40, 40, 38, 37, 37, 33, 27, 25, 28, 27, 23, 20, 20, 17, 19, 17, 18, 20, 16, 14, 15, 15, 14, 14, 15, 15, 15, 14, 13, 13, 11, 13, 12, 12, 12, 12, 12, 13, 11, 11, 14, 10, 12, 11, 11, 10, 10, 10, 10, 10, 8, 7, 12],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: { 
+                                title: { display: true, text: 'Post Title' }
+                            },
+                            y: { 
+                                title: { display: true, text: 'Interactions in 24h' }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
