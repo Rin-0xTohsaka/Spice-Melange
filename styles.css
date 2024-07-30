@@ -1,0 +1,22 @@
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+/* Light mode styles */
+:root {
+    --background-color: #FFFFFF;
+    --text-color: #000000;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1E1E1E;
+        --text-color: #FFFFFF;
+    }
+}
