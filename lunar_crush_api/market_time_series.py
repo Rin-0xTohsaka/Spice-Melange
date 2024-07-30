@@ -32,7 +32,7 @@ def generate_chart_html(df, chart_id, chart_label, chart_data, x_label, y_label,
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
-        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>{{ chart_label }}</h1>

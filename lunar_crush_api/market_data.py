@@ -13,7 +13,7 @@ def process_market_data():
 def generate_market_data_charts(df):
     os.makedirs('charts', exist_ok=True)
 
-    # HTML Template for DataTables
+    # HTML Template for DataTables with styles included
     html_template = """
     <!DOCTYPE html>
     <html lang="en">
@@ -22,6 +22,7 @@ def generate_market_data_charts(df):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Market Data</title>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="styles.css">
         <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
         <style>

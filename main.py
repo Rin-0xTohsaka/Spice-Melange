@@ -1,3 +1,5 @@
+# main.py
+
 import os
 import pandas as pd
 from lunar_crush_api.market_data import process_market_data, generate_market_data_charts
