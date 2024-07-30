@@ -1,4 +1,20 @@
+import os
+import pandas as pd
+from jinja2 import Template
+from .fetch_data import fetch_data
 
+def process_market_data():
+    endpoint = "/public/coins/wif/v1"
+    data = fetch_data(endpoint)
+    df = pd.DataFrame([data['data']])
+    df = df.applymap(lambda x: f'{x:.2f}' if isinstance(x, float) else x)  # Ensure two decimal places
+    return df
+
+def generate_market_data_charts(df):
+    os.makedirs('charts', exist_ok=True)
+
+    # HTML Template for DataTables
+    html_template = """
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -50,11 +66,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>$2296461098.87</td>
-                    <td>$2.30</td>
-                    <td>$271878306.67</td>
-                    <td>-4.06%</td>
-                    <td>-10.49%</td>
+                    <td>${{ market_cap }}</td>
+                    <td>${{ price }}</td>
+                    <td>${{ volume_24h }}</td>
+                    <td>{{ percent_change_24h }}%</td>
+                    <td>{{ percent_change_7d }}%</td>
                 </tr>
             </tbody>
         </table>
@@ -65,4 +81,25 @@
         </script>
     </body>
     </html>
-    
+    """
+
+    # Prepare data for templates
+    data = {
+        "market_cap": df['market_cap'][0],
+        "price": df['price'][0],
+        "volume_24h": df['volume_24h'][0],
+        "percent_change_24h": df['percent_change_24h'][0],
+        "percent_change_7d": df['percent_change_7d'][0]
+    }
+
+    # Render HTML with data
+    template = Template(html_template)
+    html_content = template.render(**data)
+
+    # Save HTML to file
+    with open(os.path.join('charts', 'market_data.html'), 'w') as f:
+        f.write(html_content)
+
+if __name__ == "__main__":
+    df_market_data = process_market_data()
+    generate_market_data_charts(df_market_data)

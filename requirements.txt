@@ -1,0 +1,6 @@
+jinja2
+pandas
+requests
+python-dotenv
+plotly
+wordcloud
