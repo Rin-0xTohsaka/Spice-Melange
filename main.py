@@ -1,5 +1,3 @@
-# main.py
-
 import os
 import pandas as pd
 from lunar_crush_api.market_data import process_market_data, generate_market_data_charts
@@ -37,7 +35,10 @@ def generate_index_html():
             <li><a href="topic_summary.html">Topic Summary</a></li>
             <li><a href="topic_time_series.html">Topic Time Series</a></li>
             <li><a href="pools_data.html">Pools Data</a></li>
-            <li><a href="coin_comparison.html">Coin Comparison</a></li>
+            <li><a href="market_cap_comparison.html">Market Cap Comparison</a></li>
+            <li><a href="volume_comparison.html">Volume Comparison</a></li>
+            <li><a href="social_dominance_comparison.html">Social Dominance Comparison</a></li>
+            <li><a href="volatility_comparison.html">Volatility Comparison</a></li>
         </ul>
     </body>
     </html>
