@@ -31,9 +31,11 @@ def generate_index_html():
             <li><a href="volume_market_cap_over_time.html">Volume and Market Cap Over Time</a></li>
             <li><a href="market_data.html">Market Data</a></li>
             <li><a href="top_creators.html">Top Creators</a></li>
-            <li><a href="top_posts.html">Top Posts</a></li>
-            <li><a href="topic_summary_table.html">Topic Summary</a></li>
-            <li><a href="related_topics_wordcloud.html">Topic Wordcloud</a></li>
+            <li><a href="top_posts_table.html">Top Posts Table</a></li>
+            <li><a href="sentiment_distribution.html">Sentiment Distribution for Top Posts</a></li>
+            <li><a href="top_posts_by_interactions.html">Top Posts by Interactions</a></li>
+            <li><a href="topic_summary_table.html">Topic Summary Table</a></li>
+            <li><a href="related_topics_wordcloud.html">Related Topics Wordcloud</a></li>
             <li><a href="topic_time_series.html">Topic Time Series</a></li>
             <li><a href="pools_data.html">Pools Data</a></li>
             <li><a href="market_cap_comparison.html">Market Cap Comparison</a></li>
