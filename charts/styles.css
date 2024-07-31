@@ -7,6 +7,21 @@ h1 {
     color: var(--text-color);
 }
 
+table {
+    max-width: 800px; 
+    max-height: 500px; 
+    margin: auto; 
+}
+
+table th, table td {
+    color: #000000; /* Ensure table text is always black */
+}
+
+.dataTables_wrapper {
+    width: 100%; 
+    overflow: auto;
+}
+
 /* Light mode styles */
 :root {
     --background-color: #FFFFFF;
@@ -18,5 +33,10 @@ h1 {
     :root {
         --background-color: #1E1E1E;
         --text-color: #FFFFFF;
+    }
+
+    /* Add this block to change the color of table headers in dark mode */
+    table th {
+        color: #FFFFFF; /* Change the color to white */
     }
 }

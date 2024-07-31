@@ -22,8 +22,20 @@ def generate_top_creators_charts(df):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Top Creators</title>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="styles.css">
         <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+        <style>
+            table {
+                max-width: 800px; 
+                max-height: 500px; 
+                margin: auto; 
+            }
+            .dataTables_wrapper {
+                width: 100%; 
+                overflow: auto;
+            }
+        </style>
     </head>
     <body>
         <h1>Top Creators Table</h1>
