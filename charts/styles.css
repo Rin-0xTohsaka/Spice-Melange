@@ -1,25 +1,61 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Responsive typography */
 h1 {
     color: var(--text-color);
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0;
 }
 
+canvas {
+    max-width: 100%;
+    height: auto !important;
+}
+
+/* Style tables for mobile compatibility */
 table {
-    max-width: 800px; 
-    max-height: 500px; 
-    margin: auto; 
+    width: 100%; /* Make table take full width */
+    max-width: 100%; /* Prevent table from exceeding container width */
+    border-collapse: collapse;
+    margin: 20px auto; /* Center table */
 }
 
 table th, table td {
     color: #000000; /* Ensure table text is always black */
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
 .dataTables_wrapper {
     width: 100%; 
-    overflow: auto;
+    overflow-x: auto;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    table, th, td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
 }
 
 /* Light mode styles */
@@ -35,8 +71,8 @@ table th, table td {
         --text-color: #FFFFFF;
     }
 
-    /* Add this block to change the color of table headers in dark mode */
     table th {
-        color: #FFFFFF; /* Change the color to white */
+        color: #FFFFFF;
+        background-color: #333333;
     }
 }
