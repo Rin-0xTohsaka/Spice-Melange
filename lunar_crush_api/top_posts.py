@@ -73,19 +73,20 @@ def generate_chart_html(chart_data, chart_id, chart_label, x_label, y_label, fil
         <title>{{ chart_label }}</title>
         <link rel="stylesheet" href="styles.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <style>
-            canvas {
-                max-width: 800px;
-                max-height: 500px;
-            }
-        </style>
     </head>
     <body>
         <h1>{{ chart_label }}</h1>
-        <canvas id="{{ chart_id }}"></canvas>
+        <canvas id="{{ chart_id }}" style="height: 400px;"></canvas>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                var ctx = document.getElementById('{{ chart_id }}').getContext('2d');
+                const canvas = document.getElementById('{{ chart_id }}');
+
+                // Adjust canvas height based on screen width
+                if (window.innerWidth <= 768) {
+                    canvas.style.height = '600px'; // Set taller height for mobile devices
+                }
+
+                var ctx = canvas.getContext('2d');
                 new Chart(ctx, {
                     type: 'bar',
                     data: {
