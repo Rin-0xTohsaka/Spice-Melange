@@ -16,7 +16,7 @@ h1 {
 
 canvas {
     max-width: 100%;
-    height: auto !important;
+    height: 400px; /* Default height for desktop and larger screens */
 }
 
 /* Style tables for mobile compatibility */
@@ -50,6 +50,10 @@ table th {
     h1 {
         font-size: 1.5rem;
         margin: 10px 0;
+    }
+
+    canvas {
+        height: 600px; /* Double the height of charts for mobile devices */
     }
 
     table, th, td {
