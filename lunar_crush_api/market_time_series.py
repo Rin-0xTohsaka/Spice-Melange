@@ -36,11 +36,18 @@ def generate_chart_html(df, chart_id, chart_label, chart_data, x_label, y_label,
     </head>
     <body>
         <h1>{{ chart_label }}</h1>
-        <canvas id="{{ chart_id }}"></canvas>
+        <canvas id="{{ chart_id }}" style="height: 400px;"></canvas>
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                const canvas = document.getElementById('{{ chart_id }}');
+
+                // Adjust canvas height based on screen width
+                if (window.innerWidth <= 768) {
+                    canvas.style.height = '600px'; // Set taller height for mobile devices
+                }
+
                 function updateChartColors(chart) {
                     const mode = darkModeMediaQuery.matches ? 'dark' : 'light';
                     const textColor = mode === 'dark' ? '#FFFFFF' : '#000000';
@@ -51,11 +58,12 @@ def generate_chart_html(df, chart_id, chart_label, chart_data, x_label, y_label,
                     chart.options.plugins.legend.labels.color = textColor;
                     chart.update();
                 }
+
                 darkModeMediaQuery.addEventListener('change', () => {
                     updateChartColors(chart);
                 });
 
-                var ctx = document.getElementById('{{ chart_id }}').getContext('2d');
+                var ctx = canvas.getContext('2d');
                 var chart = new Chart(ctx, {
                     type: 'line',
                     data: {
@@ -124,6 +132,7 @@ def generate_chart_html(df, chart_id, chart_label, chart_data, x_label, y_label,
     # Save HTML to file
     with open(os.path.join('charts', file_name), 'w') as f:
         f.write(html_content)
+
 
 def generate_market_time_series_charts(df):
     os.makedirs('charts', exist_ok=True)
