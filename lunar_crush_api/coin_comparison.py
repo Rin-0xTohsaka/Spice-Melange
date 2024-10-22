@@ -8,9 +8,9 @@ def process_coin_data(coin):
     endpoint = f"/public/coins/{coin}/time-series/v2"
     params = {
         "bucket": "day",
-        "interval": "1d",
+        "interval": "1m",
         "start": 1704171600,
-        "end": 1733115600
+        "end": 1719723600
     }
     data = fetch_data(endpoint, params=params)
 
